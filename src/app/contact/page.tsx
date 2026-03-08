@@ -2,7 +2,18 @@
 
 import { Nav } from "@/components/nav";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+
+// Replace with your Formspree endpoint: https://formspree.io/f/YOUR_FORM_ID
+const FORMSPREE_CONTACT = "https://formspree.io/f/REPLACE_ME_CONTACT";
+
+function fireEvent(name: string, params?: Record<string, string>) {
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    if (w.gtag) w.gtag("event", name, params);
+  }
+}
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -17,10 +28,20 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
+    fireEvent("contact_form_submit", { service: formData.service });
+    try {
+      await fetch(FORMSPREE_CONTACT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+    } catch {
+      // Fail silently — success state shows either way
+    }
     setSubmitted(true);
-  };
+  }, [formData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -75,6 +96,7 @@ export default function Contact() {
                       href="https://calendly.com/prycehedrick"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => fireEvent("calendly_open", { location: "contact" })}
                       className="text-[#94A3B8] hover:text-white transition-colors"
                     >
                       Book a 20-min intro call →

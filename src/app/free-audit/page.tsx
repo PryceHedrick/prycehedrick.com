@@ -2,7 +2,10 @@
 
 import { Nav } from "@/components/nav";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+
+// Replace with your Formspree endpoint: https://formspree.io/f/YOUR_FORM_ID
+const FORMSPREE_AUDIT = "https://formspree.io/f/REPLACE_ME_AUDIT";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -15,17 +18,25 @@ export default function FreeAudit() {
     biggestProblem: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     // Fire GA4 event
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const w = window as any;
-    if (typeof window !== "undefined" && w.gtag) {
-      w.gtag("event", "audit_request_submit", { business_type: formData.businessType });
+    if (typeof window !== "undefined") {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const w = window as any;
+      if (w.gtag) w.gtag("event", "audit_request_submit", { business_type: formData.businessType });
     }
-    // Form submission handled via Formspree or similar — swap action URL
+    try {
+      await fetch(FORMSPREE_AUDIT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+    } catch {
+      // Fail silently — success state shows either way
+    }
     setSubmitted(true);
-  };
+  }, [formData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -2,13 +2,25 @@
 
 import { Nav } from "@/components/nav";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+function fireEvent(name: string, params?: Record<string, string>) {
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    if (w.gtag) w.gtag("event", name, params);
+  }
+}
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function Pricing() {
   const [isMonthly, setIsMonthly] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    fireEvent("pricing_view");
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);

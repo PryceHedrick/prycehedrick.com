@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -10,37 +11,49 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <Nav />
 
       <main className="flex-grow">
-        <section className="px-6 lg:px-8 py-24 max-w-4xl mx-auto">
-          {/* Intro */}
-          <div className="mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-              Hi. I&apos;m Pryce.
-            </h1>
-            <p className="text-xl md:text-2xl text-[#94A3B8] mb-6 text-balance">
-              By day, I manage the enterprise IT network for a school district — 500+ devices, multiple campuses, no margin for downtime.
-            </p>
-            <p className="text-xl text-[#94A3B8] text-balance">
-              By night, I build automation systems for small businesses that are losing leads, wasting time on manual work, and getting outcompeted by businesses with better tech.
-            </p>
+        <section className="px-6 lg:px-8 py-24 max-w-5xl mx-auto">
+          {/* Intro — two column with portrait */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+                Hi. I&apos;m Pryce.
+              </h1>
+              <p className="text-xl md:text-2xl text-[#94A3B8] mb-6 text-balance">
+                By day, I manage the enterprise IT network for a school district — 500+ devices, multiple campuses, no margin for downtime.
+              </p>
+              <p className="text-xl text-[#94A3B8] text-balance">
+                By night, I build automation systems for small businesses that are losing leads, wasting time on manual work, and getting outcompeted by businesses with better tech.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src="/pryce-headshot.png"
+                alt="Pryce Hedrick — Founder, Pryceless Solutions"
+                width={480}
+                height={480}
+                className="rounded-2xl shadow-2xl"
+                priority
+              />
+            </div>
           </div>
 
           {/* Credentials */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-2xl p-6">
+            <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
               <div className="text-[#0D9488] text-sm font-semibold uppercase tracking-wider mb-2">Education</div>
               <div className="font-bold text-lg mb-1">CS Degree</div>
               <div className="text-[#94A3B8] text-sm">University of Southern Indiana, 2024</div>
             </div>
-            <div className="bg-[#0A0A0A] border border-[#D97706]/30 rounded-2xl p-6">
+            <div className="bg-[#111827] border border-[#D97706]/30 rounded-2xl p-6">
               <div className="text-[#D97706] text-sm font-semibold uppercase tracking-wider mb-2">Award</div>
               <div className="font-bold text-lg mb-1">Outstanding Senior Project</div>
               <div className="text-[#94A3B8] text-sm">USI Computer Science, 2024</div>
             </div>
-            <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-2xl p-6">
+            <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
               <div className="text-[#0D9488] text-sm font-semibold uppercase tracking-wider mb-2">Day Job</div>
               <div className="font-bold text-lg mb-1">Enterprise IT Administrator</div>
               <div className="text-[#94A3B8] text-sm">500+ devices, multi-campus network</div>
@@ -64,7 +77,7 @@ export default function About() {
           </div>
 
           {/* What I actually do */}
-          <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8 mb-16">
+          <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 mb-16">
             <h2 className="text-2xl font-bold mb-6">What I actually deliver</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
@@ -96,7 +109,7 @@ export default function About() {
         </section>
       </main>
 
-      <footer className="border-t border-[#1F2937] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
+      <footer className="border-t border-[#1E293B] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
         <p>&copy; {new Date().getFullYear()} Pryceless Solutions. Built in Southern Indiana.</p>
       </footer>
     </div>

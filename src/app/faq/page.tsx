@@ -97,7 +97,7 @@ export default function FAQ() {
   const filtered = activeCategory === "All" ? faqs : faqs.filter(f => f.category === activeCategory);
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <Nav />
 
       <main className="flex-grow">
@@ -116,7 +116,7 @@ export default function FAQ() {
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeCategory === cat
                     ? "bg-[#0D9488] text-white"
-                    : "bg-[#0A0A0A] border border-[#1F2937] text-[#94A3B8] hover:text-white"
+                    : "bg-[#111827] border border-[#1E293B] text-[#94A3B8] hover:text-white"
                 }`}
               >
                 {cat}
@@ -127,7 +127,7 @@ export default function FAQ() {
           {/* FAQ list */}
           <div className="space-y-3">
             {filtered.map((faq, index) => (
-              <div key={faq.q} className="border border-[#1F2937] rounded-xl bg-[#0A0A0A] overflow-hidden">
+              <div key={faq.q} className="border border-[#1E293B] rounded-xl bg-[#111827] overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full text-left px-6 py-5 flex justify-between items-start gap-4 font-medium"
@@ -153,7 +153,7 @@ export default function FAQ() {
                 </Button>
               </Link>
               <a href="tel:+18126109805">
-                <Button variant="outline" className="border-[#1F2937] px-8 h-12">
+                <Button variant="outline" className="border-[#1E293B] px-8 h-12">
                   Call (812) 610-9805
                 </Button>
               </a>
@@ -162,7 +162,7 @@ export default function FAQ() {
         </section>
       </main>
 
-      <footer className="border-t border-[#1F2937] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
+      <footer className="border-t border-[#1E293B] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
         <p>&copy; {new Date().getFullYear()} Pryceless Solutions. Built in Southern Indiana.</p>
       </footer>
     </div>

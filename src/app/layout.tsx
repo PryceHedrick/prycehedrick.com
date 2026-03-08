@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     siteName: "Pryceless Solutions",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/pryce-headshot.png", width: 1024, height: 1024 }],
   },
   robots: {
     index: true,
@@ -93,6 +94,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="theme-color" content="#0D9488" />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
@@ -100,7 +102,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0F172A]`}
       >
         {children}
 

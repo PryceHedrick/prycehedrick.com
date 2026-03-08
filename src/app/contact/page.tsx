@@ -48,7 +48,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <Nav />
 
       <main className="flex-grow">
@@ -117,7 +117,7 @@ export default function Contact() {
             </div>
 
             {/* Right: Form */}
-            <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8">
+            <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8">
               {submitted ? (
                 <div className="text-center py-12">
                   <div className="h-16 w-16 rounded-full bg-[#0D9488]/20 flex items-center justify-center mx-auto mb-6">
@@ -140,7 +140,7 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#374151] focus:outline-none focus:border-[#0D9488] transition-colors"
+                        className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-[#0D9488] transition-colors"
                         placeholder="Jane Smith"
                       />
                     </div>
@@ -152,7 +152,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#374151] focus:outline-none focus:border-[#0D9488] transition-colors"
+                        className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-[#0D9488] transition-colors"
                         placeholder="(812) 555-0100"
                       />
                     </div>
@@ -167,7 +167,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#374151] focus:outline-none focus:border-[#0D9488] transition-colors"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-[#0D9488] transition-colors"
                       placeholder="jane@smithhvac.com"
                     />
                   </div>
@@ -179,7 +179,7 @@ export default function Contact() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#0D9488] transition-colors appearance-none"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#0D9488] transition-colors appearance-none"
                     >
                       <option value="">Select a service</option>
                       <option value="lead-capture">Lead Capture Starter ($997)</option>
@@ -197,7 +197,7 @@ export default function Contact() {
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#0D9488] transition-colors appearance-none"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#0D9488] transition-colors appearance-none"
                     >
                       <option value="">Select a budget range</option>
                       <option value="under-1k">Under $1,000 (quick win / chatbot)</option>
@@ -216,7 +216,7 @@ export default function Contact() {
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#374151] focus:outline-none focus:border-[#0D9488] transition-colors resize-none"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-[#0D9488] transition-colors resize-none"
                       placeholder="Tell me what you&apos;re trying to solve..."
                     />
                   </div>
@@ -231,7 +231,7 @@ export default function Contact() {
         </section>
       </main>
 
-      <footer className="border-t border-[#1F2937] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
+      <footer className="border-t border-[#1E293B] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
         <p>&copy; {new Date().getFullYear()} Pryceless Solutions. Built in Southern Indiana.</p>
       </footer>
     </div>

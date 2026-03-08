@@ -50,7 +50,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <Nav />
 
       <main className="flex-grow">
@@ -67,7 +67,7 @@ export default function Pricing() {
           </p>
 
           {/* Toggle */}
-          <div className="inline-flex bg-[#0A0A0A] p-1 rounded-xl border border-[#1F2937] mb-16">
+          <div className="inline-flex bg-[#111827] p-1 rounded-xl border border-[#1E293B] mb-16">
             <button
               onClick={() => setIsMonthly(false)}
               className={`px-8 py-3 rounded-lg text-sm font-medium transition-colors ${
@@ -92,7 +92,7 @@ export default function Pricing() {
           {!isMonthly ? (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Lead Capture Starter */}
-              <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8 flex flex-col">
+              <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Lead Capture Starter</h3>
                 <p className="text-[#94A3B8] mb-6">1 automation + website. Captures leads while you work.</p>
                 <div className="text-5xl font-bold mb-2">$997</div>
@@ -105,7 +105,7 @@ export default function Pricing() {
                   <li className="flex items-start text-[#94A3B8]"><span className="text-[#0D9488] mr-3 mt-0.5">✔</span> 30 days post-launch support</li>
                 </ul>
                 <Link href="/free-audit">
-                  <Button variant="outline" className="w-full border-[#1F2937]">Start with a Free Audit</Button>
+                  <Button variant="outline" className="w-full border-[#1E293B]">Start with a Free Audit</Button>
                 </Link>
               </div>
 
@@ -131,7 +131,7 @@ export default function Pricing() {
               </div>
 
               {/* Full AI Buildout */}
-              <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8 flex flex-col">
+              <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Full AI Buildout</h3>
                 <p className="text-[#94A3B8] mb-6">Custom workflows + full system. The complete revenue machine.</p>
                 <div className="text-5xl font-bold mb-2">$4,500</div>
@@ -144,14 +144,14 @@ export default function Pricing() {
                   <li className="flex items-start text-[#94A3B8]"><span className="text-[#0D9488] mr-3 mt-0.5">✔</span> 90 days post-launch support</li>
                 </ul>
                 <Link href="/free-audit">
-                  <Button variant="outline" className="w-full border-[#1F2937]">Start with a Free Audit</Button>
+                  <Button variant="outline" className="w-full border-[#1E293B]">Start with a Free Audit</Button>
                 </Link>
               </div>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Essential Care */}
-              <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8 flex flex-col">
+              <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Essential Care</h3>
                 <p className="text-[#94A3B8] mb-6">Monitoring + monthly ROI report. Your system stays healthy.</p>
                 <div className="text-5xl font-bold mb-8">$499<span className="text-xl text-[#94A3B8] font-normal">/mo</span></div>
@@ -163,7 +163,7 @@ export default function Pricing() {
                   <li className="flex items-start text-[#94A3B8]"><span className="text-[#0D9488] mr-3 mt-0.5">✔</span> 1 hour content updates/mo</li>
                 </ul>
                 <Link href="/free-audit">
-                  <Button variant="outline" className="w-full border-[#1F2937]">Get Started</Button>
+                  <Button variant="outline" className="w-full border-[#1E293B]">Get Started</Button>
                 </Link>
               </div>
 
@@ -188,7 +188,7 @@ export default function Pricing() {
               </div>
 
               {/* Total Partner */}
-              <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8 flex flex-col">
+              <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Total Partner</h3>
                 <p className="text-[#94A3B8] mb-6">Full management + monthly strategy call + unlimited changes.</p>
                 <div className="text-5xl font-bold mb-8">$1,500<span className="text-xl text-[#94A3B8] font-normal">/mo</span></div>
@@ -200,7 +200,7 @@ export default function Pricing() {
                   <li className="flex items-start text-[#94A3B8]"><span className="text-[#0D9488] mr-3 mt-0.5">✔</span> Weekly GBP updates</li>
                 </ul>
                 <Link href="/free-audit">
-                  <Button variant="outline" className="w-full border-[#1F2937]">Get Started</Button>
+                  <Button variant="outline" className="w-full border-[#1E293B]">Get Started</Button>
                 </Link>
               </div>
             </div>
@@ -232,12 +232,12 @@ export default function Pricing() {
         </section>
 
         {/* FAQs */}
-        <section className="px-6 lg:px-8 py-24 border-t border-[#1F2937] bg-[#0A0A0A]">
+        <section className="px-6 lg:px-8 py-24 border-t border-[#1E293B] bg-[#111827]">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="border border-[#1F2937] rounded-xl bg-black overflow-hidden transition-all">
+                <div key={index} className="border border-[#1E293B] rounded-xl bg-black overflow-hidden transition-all">
                   <button
                     onClick={() => toggleFaq(index)}
                     className="w-full text-left px-6 py-4 flex justify-between items-center font-medium"
@@ -257,7 +257,7 @@ export default function Pricing() {
         </section>
       </main>
 
-      <footer className="border-t border-[#1F2937] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
+      <footer className="border-t border-[#1E293B] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
         <p>&copy; {new Date().getFullYear()} Pryceless Solutions. Built in Southern Indiana.</p>
       </footer>
     </div>

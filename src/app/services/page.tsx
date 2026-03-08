@@ -67,7 +67,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <Nav />
 
       <main className="flex-grow">
@@ -84,7 +84,7 @@ export default function Services() {
         {/* Services */}
         <section className="px-6 lg:px-8 pb-24 max-w-6xl mx-auto space-y-12">
           {services.map((service, i) => (
-            <div key={service.name} className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8 md:p-12">
+            <div key={service.name} className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div>
                   <div
@@ -117,7 +117,7 @@ export default function Services() {
                     </ul>
                   </div>
 
-                  <div className="bg-black border border-[#1F2937] rounded-2xl p-5">
+                  <div className="bg-black border border-[#1E293B] rounded-2xl p-5">
                     <div className="text-xs font-semibold uppercase tracking-wider text-[#94A3B8] mb-2">ROI example</div>
                     <p className="text-sm text-[#94A3B8]">{service.roiExample}</p>
                   </div>
@@ -143,7 +143,7 @@ export default function Services() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="px-6 lg:px-8 py-24 text-center border-t border-[#1F2937] bg-[#0A0A0A]">
+        <section className="px-6 lg:px-8 py-24 text-center border-t border-[#1E293B] bg-[#111827]">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Not sure which service fits?</h2>
           <p className="text-[#94A3B8] text-xl mb-10 max-w-2xl mx-auto">
             Start with a free business automation audit. We&apos;ll identify exactly what&apos;s costing you leads and recommend the right solution.
@@ -155,7 +155,7 @@ export default function Services() {
               </Button>
             </Link>
             <a href="tel:+18126109805">
-              <Button size="lg" variant="outline" className="h-12 px-8 border-[#1F2937]">
+              <Button size="lg" variant="outline" className="h-12 px-8 border-[#1E293B]">
                 Call (812) 610-9805
               </Button>
             </a>
@@ -163,7 +163,7 @@ export default function Services() {
         </section>
       </main>
 
-      <footer className="border-t border-[#1F2937] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
+      <footer className="border-t border-[#1E293B] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
         <p>&copy; {new Date().getFullYear()} Pryceless Solutions. Built in Southern Indiana.</p>
       </footer>
     </div>

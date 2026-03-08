@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -21,6 +22,8 @@ const projects = [
     tech: ["Python", "Django", "PostgreSQL", "Automation"],
     labelColor: "text-[#D97706]",
     borderColor: "border-[#D97706]/30",
+    screenshot: "/images/portfolio/panda-oms/screenshot.png",
+    liveUrl: null as string | null,
   },
   {
     label: "Client Project",
@@ -34,6 +37,8 @@ const projects = [
     tech: ["Next.js", "React", "Stripe", "Automation"],
     labelColor: "text-[#0D9488]",
     borderColor: "border-[#0D9488]/30",
+    screenshot: "/images/portfolio/cardguys/screenshot.png",
+    liveUrl: "https://CardGuys.store",
   },
   {
     label: "Personal Project · Internal Proof",
@@ -46,7 +51,9 @@ const projects = [
     ],
     tech: ["TypeScript", "Node.js", "SQLite", "Discord API", "Multiple AI APIs"],
     labelColor: "text-[#94A3B8]",
-    borderColor: "border-[#1F2937]",
+    borderColor: "border-[#1E293B]",
+    screenshot: "/images/portfolio/ari/screenshot.png",
+    liveUrl: null as string | null,
   },
   {
     label: "Personal Project",
@@ -59,13 +66,15 @@ const projects = [
     ],
     tech: ["Python", "Flask", "PostgreSQL", "APIs"],
     labelColor: "text-[#94A3B8]",
-    borderColor: "border-[#1F2937]",
+    borderColor: "border-[#1E293B]",
+    screenshot: "/images/portfolio/vault/screenshot.png",
+    liveUrl: null as string | null,
   },
 ];
 
 export default function Portfolio() {
   return (
-    <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <Nav />
 
       <main className="flex-grow">
@@ -81,29 +90,55 @@ export default function Portfolio() {
             {projects.map((project) => (
               <div
                 key={project.name}
-                className={`bg-[#0A0A0A] border ${project.borderColor} rounded-3xl p-8 flex flex-col`}
+                className={`bg-[#111827] border ${project.borderColor} rounded-3xl overflow-hidden flex flex-col`}
               >
-                <div className={`text-xs font-semibold uppercase tracking-wider mb-3 ${project.labelColor}`}>
-                  {project.label}
+                {/* Screenshot */}
+                <div className="border-b border-[#1E293B]">
+                  <Image
+                    src={project.screenshot}
+                    alt={`${project.name} screenshot`}
+                    width={800}
+                    height={450}
+                    className="w-full h-48 object-cover object-top"
+                  />
                 </div>
-                <h2 className="text-2xl font-bold mb-4">{project.name}</h2>
-                <p className="text-[#94A3B8] mb-6">{project.description}</p>
 
-                <ul className="space-y-3 mb-8 flex-grow">
-                  {project.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-3 text-sm text-[#94A3B8]">
-                      <svg className="h-4 w-4 text-[#0D9488] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                      {h}
-                    </li>
-                  ))}
-                </ul>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className={`text-xs font-semibold uppercase tracking-wider mb-3 ${project.labelColor}`}>
+                    {project.label}
+                  </div>
+                  <h2 className="text-2xl font-bold mb-4">
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[#0D9488] transition-colors"
+                      >
+                        {project.name} ↗
+                      </a>
+                    ) : (
+                      project.name
+                    )}
+                  </h2>
+                  <p className="text-[#94A3B8] mb-6">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <span key={t} className="px-3 py-1 rounded-full text-xs font-medium bg-[#1F2937] text-[#94A3B8]">
-                      {t}
-                    </span>
-                  ))}
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {project.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-3 text-sm text-[#94A3B8]">
+                        <svg className="h-4 w-4 text-[#0D9488] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <span key={t} className="px-3 py-1 rounded-full text-xs font-medium bg-[#1E293B] text-[#94A3B8]">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -120,7 +155,7 @@ export default function Portfolio() {
         </section>
       </main>
 
-      <footer className="border-t border-[#1F2937] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
+      <footer className="border-t border-[#1E293B] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
         <p>&copy; {new Date().getFullYear()} Pryceless Solutions. Built in Southern Indiana.</p>
       </footer>
     </div>

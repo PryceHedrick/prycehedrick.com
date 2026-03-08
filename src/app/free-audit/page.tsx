@@ -43,7 +43,7 @@ export default function FreeAudit() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <Nav />
 
       <main className="flex-grow">
@@ -62,7 +62,7 @@ export default function FreeAudit() {
               </p>
               <div className="mt-12">
                 <Link href="/">
-                  <Button variant="outline" className="border-[#1F2937]">Back to Homepage</Button>
+                  <Button variant="outline" className="border-[#1E293B]">Back to Homepage</Button>
                 </Link>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function FreeAudit() {
                   </div>
                 </div>
 
-                <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-2xl p-6">
+                <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
                   <p className="text-sm text-[#94A3B8]">
                     <span className="text-white font-medium">Who this is for:</span> Southern Indiana small businesses — HVAC, plumbing, electrical, contractors, dental, chiro, retail — who are losing leads to competitors because their website or follow-up process isn&apos;t working.
                   </p>
@@ -117,7 +117,7 @@ export default function FreeAudit() {
               </div>
 
               {/* Right: Form */}
-              <div className="bg-[#0A0A0A] border border-[#1F2937] rounded-3xl p-8">
+              <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8">
                 <h2 className="text-xl font-bold mb-6">Request Your Free Audit</h2>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
@@ -131,7 +131,7 @@ export default function FreeAudit() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#374151] focus:outline-none focus:border-[#0D9488] transition-colors"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-[#0D9488] transition-colors"
                       placeholder="Jane Smith"
                     />
                   </div>
@@ -147,7 +147,7 @@ export default function FreeAudit() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#374151] focus:outline-none focus:border-[#0D9488] transition-colors"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-[#0D9488] transition-colors"
                       placeholder="jane@smithhvac.com"
                     />
                   </div>
@@ -162,7 +162,7 @@ export default function FreeAudit() {
                       required
                       value={formData.businessType}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#0D9488] transition-colors appearance-none"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#0D9488] transition-colors appearance-none"
                     >
                       <option value="" disabled>Select your industry</option>
                       <option value="hvac">HVAC / Heating & Cooling</option>
@@ -187,7 +187,7 @@ export default function FreeAudit() {
                       rows={4}
                       value={formData.biggestProblem}
                       onChange={handleChange}
-                      className="w-full bg-black border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#374151] focus:outline-none focus:border-[#0D9488] transition-colors resize-none"
+                      className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-[#0D9488] transition-colors resize-none"
                       placeholder="e.g. Following up with leads manually, scheduling appointments by phone, answering the same questions over and over..."
                     />
                   </div>
@@ -206,7 +206,7 @@ export default function FreeAudit() {
         </section>
       </main>
 
-      <footer className="border-t border-[#1F2937] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
+      <footer className="border-t border-[#1E293B] py-12 px-6 lg:px-8 text-center text-[#94A3B8] text-sm">
         <p>&copy; {new Date().getFullYear()} Pryceless Solutions. Built in Southern Indiana.</p>
       </footer>
     </div>

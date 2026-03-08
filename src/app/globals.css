@@ -7,14 +7,14 @@
   --color-brand-amber: #D97706;
   --color-brand-slate: #475569;
   --color-brand-light: #94A3B8;
-  --color-brand-bg: #000000; /* True black for ultra-premium dark mode */
-  --color-brand-card: #0A0A0A;
-  --color-brand-border: #1F2937;
+  --color-brand-bg: #0F172A;
+  --color-brand-card: #111827;
+  --color-brand-border: #1E293B;
 }
 
 @layer base {
   :root {
-    --background: #000000;
+    --background: #0F172A;
     --foreground: #F8FAFC;
   }
 }

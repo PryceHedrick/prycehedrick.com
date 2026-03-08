@@ -18,10 +18,10 @@ export default function FreeAudit() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Fire GA4 event
-    if (typeof window !== "undefined" && (window as Window & { gtag?: Function }).gtag) {
-      (window as Window & { gtag: Function }).gtag("event", "audit_request_submit", {
-        business_type: formData.businessType,
-      });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    if (typeof window !== "undefined" && w.gtag) {
+      w.gtag("event", "audit_request_submit", { business_type: formData.businessType });
     }
     // Form submission handled via Formspree or similar — swap action URL
     setSubmitted(true);

@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
+  // Silence the multiple-lockfile workspace root warning
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   async redirects() {
     return [
       // www → non-www canonical redirect

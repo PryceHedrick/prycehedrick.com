@@ -1,25 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Nav } from "@/components/nav";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
-      {/* Navigation */}
-      <header className="px-6 lg:px-8 h-20 flex items-center justify-between border-b border-[#1F2937]">
-        <div className="font-semibold text-xl tracking-tight">
-          Pryceless Solutions
-        </div>
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-[#94A3B8]">
-          <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-          <Link href="/portfolio" className="hover:text-white transition-colors">Portfolio</Link>
-          <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-          <Link href="/about" className="hover:text-white transition-colors">About</Link>
-        </nav>
-        <a href="tel:+18126109805" className="hidden md:inline-flex items-center gap-2 text-sm font-medium text-[#94A3B8] hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (812) 610-9805
-        </a>
-      </header>
+      <Nav />
 
       <main className="flex-grow">
         {/* Hero Section */}
@@ -100,7 +86,7 @@ export default function Home() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">Enterprise Stack, Local Price</h3>
-              <p className="text-[#94A3B8]">The same technology (Next.js, Vercel, React) that Fortune 500 companies pay $50,000+ for — at a price that makes sense for small business.</p>
+              <p className="text-[#94A3B8]">The same technology Fortune 500 companies pay $50,000+ for — at a price that makes sense for small business.</p>
             </div>
 
             <div className="bg-[#0A0A0A] border border-[#1F2937] p-8 rounded-2xl">
@@ -138,7 +124,6 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Lead Capture Starter */}
               <div className="bg-black border border-[#1F2937] rounded-3xl p-8 flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Lead Capture Starter</h3>
                 <p className="text-[#94A3B8] mb-6">1 automation + website. Captures leads while you work.</p>
@@ -153,7 +138,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Business Automation System */}
               <div className="bg-black border-2 border-[#D97706] rounded-3xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-[#D97706]/10">
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#D97706] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                   MOST POPULAR
@@ -171,7 +155,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Full AI Buildout */}
               <div className="bg-black border border-[#1F2937] rounded-3xl p-8 flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Full AI Buildout</h3>
                 <p className="text-[#94A3B8] mb-6">Custom workflows + full system. The complete revenue machine.</p>

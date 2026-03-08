@@ -1,5 +1,7 @@
 "use client";
 
+import { Nav } from "@/components/nav";
+
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -37,18 +39,7 @@ export default function Pricing() {
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-[#F8FAFC]">
-      <header className="px-6 lg:px-8 h-20 flex items-center justify-between border-b border-[#1F2937]">
-        <Link href="/" className="font-semibold text-xl tracking-tight">Pryceless Solutions</Link>
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-[#94A3B8]">
-          <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-          <Link href="/portfolio" className="hover:text-white transition-colors">Portfolio</Link>
-          <Link href="/pricing" className="text-white">Pricing</Link>
-          <Link href="/about" className="hover:text-white transition-colors">About</Link>
-        </nav>
-        <a href="tel:+18126109805" className="hidden md:inline-flex items-center gap-2 text-sm font-medium text-[#94A3B8] hover:text-white transition-colors">
-          (812) 610-9805
-        </a>
-      </header>
+      <Nav />
 
       <main className="flex-grow">
         {/* Header */}

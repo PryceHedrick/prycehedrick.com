@@ -67,7 +67,7 @@ export default function RootLayout({
     "image": "https://prycehedrick.com/logo.png", // Placeholder
     "@id": "https://prycehedrick.com",
     "url": "https://prycehedrick.com",
-    "telephone": "", // Add if applicable
+    "telephone": "+18126109805",
     "areaServed": [
       { "@type": "City", "name": "Vincennes" },
       { "@type": "City", "name": "Washington" },

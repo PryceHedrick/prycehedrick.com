@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
+/* ─── Design tokens ─────────────────────────────────────── */
 @theme {
-  --color-brand-navy: #0F172A;
-  --color-brand-teal: #0D9488;
-  --color-brand-blue: #1E40AF;
-  --color-brand-amber: #D97706;
-  --color-brand-slate: #475569;
-  --color-brand-light: #94A3B8;
-  --color-brand-bg: #0F172A;
-  --color-brand-card: #111827;
-  --color-brand-border: #1E293B;
+  /* Use these in className: bg-brand-navy, text-brand-teal, border-brand-border, etc. */
+  --color-brand-navy:    #0F172A;
+  --color-brand-surface: #111827;
+  --color-brand-border:  #1E293B;
+  --color-brand-muted:   #1E3A5F;   /* accent border / hover ring */
+  --color-brand-teal:    #0D9488;
+  --color-brand-amber:   #D97706;
+  --color-brand-light:   #94A3B8;
+  --color-brand-text:    #F8FAFC;
 }
 
 @layer base {
@@ -26,6 +27,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ─── Entrance animation (CSS-only, no JS required) ──────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.55s ease-out both;
+}
+
+.animate-fade-up-delay-1 { animation-delay: 0.1s; }
+.animate-fade-up-delay-2 { animation-delay: 0.2s; }
+.animate-fade-up-delay-3 { animation-delay: 0.3s; }
 
 @layer utilities {
   .text-balance {

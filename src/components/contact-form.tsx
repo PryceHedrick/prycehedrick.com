@@ -123,9 +123,9 @@ export function ContactForm() {
           className="w-full bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#0ea5e9] transition-colors appearance-none"
         >
           <option value="">Select a service</option>
-          <option value="lead-capture">Lead Capture Starter ($997)</option>
-          <option value="automation-system">Business Automation System ($2,200)</option>
-          <option value="full-buildout">Full AI Buildout ($4,500)</option>
+          <option value="starter">Starter ($997) — website + lead capture</option>
+          <option value="growth">Growth ($2,200) — website + automations + CRM</option>
+          <option value="system">System ($4,500) — custom workflows + full integration</option>
           <option value="website-only">Website Only</option>
           <option value="custom">Custom / Not Sure</option>
         </select>
@@ -142,9 +142,9 @@ export function ContactForm() {
         >
           <option value="">Select a budget range</option>
           <option value="under-1k">Under $1,000 (quick win / chatbot)</option>
-          <option value="1k-2.5k">$1,000 – $2,500 (Lead Capture Starter)</option>
-          <option value="2.5k-5k">$2,500 – $5,000 (Business Automation System)</option>
-          <option value="5k-plus">$5,000+ (Full AI Buildout / Custom)</option>
+          <option value="1k-2.5k">$1,000 – $2,500 (Starter)</option>
+          <option value="2.5k-5k">$2,500 – $5,000 (Growth)</option>
+          <option value="5k-plus">$5,000+ (System / Custom)</option>
           <option value="not-sure">Not sure — let&apos;s talk</option>
         </select>
       </div>

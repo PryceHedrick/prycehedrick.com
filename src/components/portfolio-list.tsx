@@ -15,6 +15,7 @@ const projects = [
     badge: "Client · Award-Winning",
     badgeColor: "text-[#D97706]",
     ringColor: "ring-[#D97706]/30",
+    screenshotFit: "object-cover object-center",
     name: "Panda International Order Management System",
     location: "Vincennes, IN",
     summary:
@@ -41,6 +42,7 @@ const projects = [
     badge: "Client · Live Store",
     badgeColor: "text-[#0ea5e9]",
     ringColor: "ring-[#0ea5e9]/30",
+    screenshotFit: "object-cover object-center",
     name: "CardGuys.store",
     location: "Evansville, IN",
     summary:
@@ -66,6 +68,7 @@ const projects = [
     badge: "Personal · Internal Proof",
     badgeColor: "text-[#94A3B8]",
     ringColor: "ring-[#1E293B]",
+    screenshotFit: "object-contain object-center",
     name: "ARI — AI Operating System",
     location: "Built for myself",
     summary:
@@ -88,6 +91,7 @@ const projects = [
     badge: "Personal · Side Project",
     badgeColor: "text-[#94A3B8]",
     ringColor: "ring-[#1E293B]",
+    screenshotFit: "object-cover object-center",
     name: "Vault — Pokémon TCG Tracker",
     location: "Built for fun",
     summary:
@@ -122,7 +126,7 @@ function ClientCard({ project }: { project: (typeof projects)[number] }) {
           width={800}
           height={500}
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="w-full h-64 object-cover object-top"
+          className={`w-full h-64 ${project.screenshotFit}`}
         />
         <div className="absolute top-3 left-3">
           <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-[#0A0F1E]/90 backdrop-blur-sm ${project.badgeColor}`}>
@@ -203,7 +207,7 @@ function PersonalCard({ project }: { project: (typeof projects)[number] }) {
           width={800}
           height={500}
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="w-full h-56 object-cover object-top"
+          className={`w-full h-56 ${project.screenshotFit}`}
         />
         <div className="absolute top-3 left-3">
           <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-[#0A0F1E]/90 backdrop-blur-sm text-[#94A3B8]">

@@ -21,7 +21,11 @@ export default function Home() {
       <main className="flex-grow">
 
         {/* ── Hero ─────────────────────────────────────────── */}
-        <section className="px-6 lg:px-8 py-24 md:py-32 lg:py-40 flex flex-col items-center text-center max-w-5xl mx-auto">
+        <section className="relative px-6 lg:px-8 py-24 md:py-32 lg:py-40 flex flex-col items-center text-center max-w-5xl mx-auto overflow-hidden">
+          <div
+            className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(14,165,233,0.12),transparent)] pointer-events-none"
+            aria-hidden="true"
+          />
           {/* CSS animation — no JS, no opacity:0 flash */}
           <div className="inline-flex items-center rounded-full border border-[#1E293B] px-3 py-1 text-sm font-medium text-[#94A3B8] mb-8 animate-fade-up">
             <span className="flex h-2 w-2 rounded-full bg-[#0ea5e9] mr-2 flex-shrink-0" aria-hidden="true" />
@@ -110,7 +114,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl">
+              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
                 <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
@@ -120,7 +124,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl">
+              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
                 <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
                 </div>
@@ -130,7 +134,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl">
+              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
                 <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
@@ -140,7 +144,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl">
+              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
                 <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
                 </div>
@@ -150,7 +154,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl md:col-span-2 lg:col-span-1">
+              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl md:col-span-2 lg:col-span-1 transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
                 <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
                 </div>
@@ -211,8 +215,13 @@ export default function Home() {
             <div className="px-6 lg:px-8 py-24 max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How we compare.</h2>
-                <p className="text-[#CBD5E1] text-lg max-w-2xl mx-auto">
+                <p className="text-[#CBD5E1] text-lg max-w-2xl mx-auto mb-4">
                   Neither DIY nor agencies are the right fit for most local businesses. Here&apos;s why.
+                </p>
+                <p className="text-[#94A3B8] text-sm max-w-xl mx-auto">
+                  DIY tools take more of your time than expected — and you still don&apos;t own a
+                  professional system. Agencies charge for platforms you don&apos;t control. There&apos;s
+                  a third option most people don&apos;t know exists.
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden border border-[#1E293B]">
@@ -373,14 +382,31 @@ export default function Home() {
           <section className="py-24 px-6 lg:px-8 bg-[#0F172A]">
             <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="flex justify-center lg:justify-start">
-                <Image
-                  src="/pryce-headshot.png"
-                  alt="Pryce Hedrick — Founder, Pryceless Solutions"
-                  width={420}
-                  height={420}
-                  sizes="(max-width: 1024px) 280px, 420px"
-                  className="rounded-2xl shadow-2xl"
-                />
+                <div className="relative inline-block">
+                  <Image
+                    src="/pryce-headshot.png"
+                    alt="Pryce Hedrick — Founder, Pryceless Solutions"
+                    width={420}
+                    height={420}
+                    sizes="(max-width: 1024px) 280px, 420px"
+                    className="rounded-2xl shadow-2xl"
+                  />
+                  <div className="absolute bottom-4 left-4 right-4 bg-[#0A0F1E]/85 backdrop-blur-sm border border-[#D97706]/40 rounded-xl p-3">
+                    <div className="flex items-center gap-2">
+                      <svg
+                        className="h-4 w-4 text-[#D97706] flex-shrink-0"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"
+                        aria-hidden="true"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                      </svg>
+                      <div>
+                        <div className="text-xs font-bold text-[#D97706]">USI 2024 Outstanding Senior Project</div>
+                        <div className="text-xs text-[#94A3B8]">Computer Science Department</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div>
                 <p className="text-sm font-semibold text-[#0ea5e9] uppercase tracking-wider mb-4">
@@ -393,7 +419,9 @@ export default function Home() {
                   CS degree from USI. I run the IT infrastructure for a school district — 500+ devices, multiple buildings, zero tolerance for downtime. That discipline is what I bring to every client project.
                 </p>
                 <p className="text-lg text-[#CBD5E1] mb-8">
-                  I built ARI — an AI operating system I use to run my own business — before I sold the concept to anyone. I&apos;m taking on a small number of founding clients right now.
+                  My senior project — a custom order system for a restaurant in Vincennes — won USI&apos;s
+                  2024 Outstanding Senior Project Award and has been running in production for two years
+                  without a single shipping error. That&apos;s the standard I hold every project to.
                 </p>
                 <Link href="/free-audit">
                   <Button className="bg-[#0ea5e9] hover:bg-[#0284C7] text-white">

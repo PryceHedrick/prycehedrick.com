@@ -226,9 +226,11 @@ export default function Home() {
                     <div className="text-lg font-semibold mb-1">Agencies</div>
                     <div className="text-xs text-[#94A3B8]">Design firms / GHL resellers</div>
                   </div>
-                  <div className="bg-[#0ea5e9]/5 p-8 relative">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0ea5e9] text-white px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">
-                      Recommended
+                  <div className="bg-[#0ea5e9]/5 p-8">
+                    <div className="mb-3">
+                      <span className="bg-[#0ea5e9] text-white px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">
+                        Recommended
+                      </span>
                     </div>
                     <div className="text-lg font-semibold mb-1">Pryceless Solutions</div>
                     <div className="text-xs text-[#0ea5e9]">Southern Indiana</div>

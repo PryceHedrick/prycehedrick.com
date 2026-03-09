@@ -161,66 +161,69 @@ export default function Home() {
                   a third option most people don&apos;t know exists.
                 </p>
               </div>
-              <div className="rounded-2xl overflow-hidden border border-[#1E293B]">
-                {/* Column headers */}
-                <div className="grid grid-cols-3">
-                  <div className="bg-[#0F172A] border-r border-[#1E293B] p-8">
-                    <div className="text-lg font-semibold mb-1">DIY Tools</div>
-                    <div className="text-xs text-[#94A3B8]">Wix, Squarespace, etc.</div>
-                  </div>
-                  <div className="bg-[#0F172A] border-r border-[#1E293B] p-8">
-                    <div className="text-lg font-semibold mb-1">Agencies</div>
-                    <div className="text-xs text-[#94A3B8]">Design firms / GHL resellers</div>
-                  </div>
-                  {/* Pryceless column — elevated */}
-                  <div className="bg-[#0d1f35] p-8 relative">
-                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#0ea5e9] to-transparent" />
-                    <div className="mb-3">
-                      <span className="bg-[#0ea5e9] text-white px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">
-                        Recommended
-                      </span>
-                    </div>
-                    <div className="text-lg font-semibold mb-1">Pryceless Solutions</div>
-                    <div className="text-xs text-[#0ea5e9]">Southern Indiana</div>
-                  </div>
-                </div>
-                {/* Data rows */}
-                {comparisonRows.map((row) => (
-                  <div key={row.label} className="border-t border-[#1E293B]">
-                    <div className="px-8 pt-3 pb-1">
-                      <div className="text-xs font-semibold uppercase tracking-wider text-[#94A3B8]">{row.label}</div>
-                    </div>
-                    <div className="grid grid-cols-3">
-                      <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 pb-4 text-sm">
-                        <span className={row.diy === "✗" ? "text-[#475569]" : "text-[#CBD5E1]"}>{row.diy}</span>
-                      </div>
-                      <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 pb-4 text-sm">
-                        <span className={row.agencies === "✗" ? "text-[#475569]" : "text-[#CBD5E1]"}>{row.agencies}</span>
-                      </div>
-                      <div className="bg-[#0d1f35] px-8 pb-4 text-sm">
-                        <span className={row.pryceless === "✓" ? "text-[#0ea5e9] font-bold" : "text-[#CBD5E1]"}>{row.pryceless}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                {/* Verdict row */}
-                <div className="border-t border-[#1E293B]">
+              {/* overflow-x-auto lets mobile users scroll the 3-col table horizontally */}
+              <div className="overflow-x-auto -mx-6 lg:mx-0 px-6 lg:px-0">
+                <div className="rounded-2xl overflow-hidden border border-[#1E293B] min-w-[480px]">
+                  {/* Column headers */}
                   <div className="grid grid-cols-3">
-                    <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 py-5">
-                      <p className="text-xs text-[#475569]">Best for: complete control of your time</p>
+                    <div className="bg-[#0F172A] border-r border-[#1E293B] p-4 md:p-8">
+                      <div className="text-sm md:text-lg font-semibold mb-1">DIY Tools</div>
+                      <div className="text-xs text-[#94A3B8]">Wix, Squarespace, etc.</div>
                     </div>
-                    <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 py-5">
-                      <p className="text-xs text-[#475569]">Best for: large budgets, no time pressure</p>
+                    <div className="bg-[#0F172A] border-r border-[#1E293B] p-4 md:p-8">
+                      <div className="text-sm md:text-lg font-semibold mb-1">Agencies</div>
+                      <div className="text-xs text-[#94A3B8]">Design firms / GHL resellers</div>
                     </div>
-                    <div className="bg-[#0d1f35] px-8 py-5">
-                      <p className="text-xs text-[#0ea5e9] font-medium mb-3">
-                        Best for: local businesses who want results without subscriptions
-                      </p>
-                      <Link href="/free-audit">
-                        <button className="text-xs text-white bg-[#0ea5e9] hover:bg-[#0284C7] transition-colors rounded-full px-4 py-1.5">
-                          Start free →
-                        </button>
-                      </Link>
+                    {/* Pryceless column — elevated */}
+                    <div className="bg-[#0d1f35] p-4 md:p-8 relative">
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#0ea5e9] to-transparent" />
+                      <div className="mb-3">
+                        <span className="bg-[#0ea5e9] text-white px-2 md:px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">
+                          Recommended
+                        </span>
+                      </div>
+                      <div className="text-sm md:text-lg font-semibold mb-1">Pryceless Solutions</div>
+                      <div className="text-xs text-[#0ea5e9]">Southern Indiana</div>
+                    </div>
+                  </div>
+                  {/* Data rows */}
+                  {comparisonRows.map((row) => (
+                    <div key={row.label} className="border-t border-[#1E293B]">
+                      <div className="px-4 md:px-8 pt-3 pb-1">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-[#94A3B8]">{row.label}</div>
+                      </div>
+                      <div className="grid grid-cols-3">
+                        <div className="bg-[#0F172A] border-r border-[#1E293B] px-4 md:px-8 pb-3 md:pb-4 text-xs md:text-sm">
+                          <span className={row.diy === "✗" ? "text-[#475569]" : "text-[#CBD5E1]"}>{row.diy}</span>
+                        </div>
+                        <div className="bg-[#0F172A] border-r border-[#1E293B] px-4 md:px-8 pb-3 md:pb-4 text-xs md:text-sm">
+                          <span className={row.agencies === "✗" ? "text-[#475569]" : "text-[#CBD5E1]"}>{row.agencies}</span>
+                        </div>
+                        <div className="bg-[#0d1f35] px-4 md:px-8 pb-3 md:pb-4 text-xs md:text-sm">
+                          <span className={row.pryceless === "✓" ? "text-[#0ea5e9] font-bold" : "text-[#CBD5E1]"}>{row.pryceless}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {/* Verdict row */}
+                  <div className="border-t border-[#1E293B]">
+                    <div className="grid grid-cols-3">
+                      <div className="bg-[#0F172A] border-r border-[#1E293B] px-4 md:px-8 py-4 md:py-5">
+                        <p className="text-xs text-[#475569]">Best for: complete control of your time</p>
+                      </div>
+                      <div className="bg-[#0F172A] border-r border-[#1E293B] px-4 md:px-8 py-4 md:py-5">
+                        <p className="text-xs text-[#475569]">Best for: large budgets, no time pressure</p>
+                      </div>
+                      <div className="bg-[#0d1f35] px-4 md:px-8 py-4 md:py-5">
+                        <p className="text-xs text-[#0ea5e9] font-medium mb-3">
+                          Best for: local businesses who want results without subscriptions
+                        </p>
+                        <Link href="/free-audit">
+                          <button className="text-xs text-white bg-[#0ea5e9] hover:bg-[#0284C7] transition-colors rounded-full px-3 py-1 md:px-4 md:py-1.5">
+                            Start free →
+                          </button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -451,7 +454,7 @@ export default function Home() {
               <div className="flex justify-center lg:justify-start">
                 <div className="relative inline-block">
                   <Image
-                    src="/pryce-headshot.png"
+                    src="/pryce-headshot.jpg"
                     alt="Pryce Hedrick — Founder, Pryceless Solutions"
                     width={420}
                     height={420}

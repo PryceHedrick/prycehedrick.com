@@ -18,7 +18,7 @@ export default function About() {
     name: "Pryce Hedrick",
     jobTitle: "AI Automation Engineer & Web Developer",
     url: "https://prycehedrick.com/about",
-    image: "https://prycehedrick.com/pryce-headshot.png",
+    image: "https://prycehedrick.com/pryce-headshot.jpg",
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "University of Southern Indiana",
@@ -60,7 +60,7 @@ export default function About() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative inline-block">
                 <Image
-                  src="/pryce-headshot.png"
+                  src="/pryce-headshot.jpg"
                   alt="Pryce Hedrick — Founder, Pryceless Solutions"
                   width={480}
                   height={480}

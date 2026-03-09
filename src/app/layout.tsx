@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/pryce-headshot.png",
+        url: "/pryce-headshot.jpg",
         width: 1024,
         height: 1024,
         alt: "Pryce Hedrick — Founder, Pryceless Solutions",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Pryceless Solutions | AI Automation",
     description:
       "Stop losing leads to missed calls. AI automation for Southern Indiana small businesses. Free audit →",
-    images: ["/pryce-headshot.png"],
+    images: ["/pryce-headshot.jpg"],
   },
   robots: {
     index: true,
@@ -91,7 +91,7 @@ export default function RootLayout({
     url: "https://prycehedrick.com",
     telephone: "+18126109805",
     email: "prycehedrick@gmail.com",
-    image: "https://prycehedrick.com/pryce-headshot.png",
+    image: "https://prycehedrick.com/pryce-headshot.jpg",
     priceRange: "$997–$10000+",
     address: {
       "@type": "PostalAddress",

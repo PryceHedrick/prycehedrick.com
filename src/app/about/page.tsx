@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Pryce Hedrick — USI 2024 Outstanding Senior Project Award, enterprise IT administrator, and AI automation builder for Southern Indiana small businesses.",
+    "Pryce Hedrick builds AI automation systems for Southern Indiana small businesses. CS grad, USI 2024 Outstanding Senior Project Award, enterprise IT administrator.",
   alternates: { canonical: "/about" },
 };
 
@@ -51,10 +51,10 @@ export default function About() {
                 Hi. I&apos;m Pryce.
               </h1>
               <p className="text-xl text-[#CBD5E1] mb-5 text-balance leading-relaxed">
-                By day, I manage the enterprise IT network for a school district — 500+ devices, multiple campuses, no margin for downtime.
+                I run the IT infrastructure for a school district — 500+ devices, multiple campuses, zero margin for downtime. That pressure teaches you to build systems that don&apos;t fail.
               </p>
               <p className="text-xl text-[#CBD5E1] text-balance leading-relaxed">
-                By night, I build automation systems for small businesses that are losing leads, wasting hours on manual work, and getting outcompeted by businesses with better tech.
+                Pryceless Solutions is where I apply that discipline to Southern Indiana businesses — HVAC shops, contractors, dental offices — who are losing customers because their tech is five years behind.
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -150,7 +150,7 @@ export default function About() {
             </p>
             <Link href="/free-audit">
               <Button className="bg-[#0ea5e9] hover:bg-[#0284C7] text-white px-8 h-12 text-base">
-                Work with me →
+                Start with a free audit →
               </Button>
             </Link>
           </div>

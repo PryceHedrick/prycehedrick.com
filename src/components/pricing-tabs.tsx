@@ -77,9 +77,10 @@ export function PricingTabs() {
             {/* Lead Capture Starter */}
             <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
               <h3 className="text-xl font-bold mb-2">Lead Capture Starter</h3>
-              <p className="text-[#CBD5E1] text-sm mb-6">
+              <p className="text-[#CBD5E1] text-sm mb-3">
                 Website + lead capture + automated notification. Captures leads while you work.
               </p>
+              <p className="text-xs text-[#64748B] italic mb-6">Best for businesses with an existing site that need the automation layer.</p>
               <div className="text-5xl font-bold mb-1">$997</div>
               <p className="text-sm text-[#94A3B8] mb-8">or $600 as a Founding Partner</p>
               <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
@@ -109,9 +110,10 @@ export function PricingTabs() {
                 Most Popular
               </div>
               <h3 className="text-xl font-bold mb-2">Business Automation System</h3>
-              <p className="text-[#CBD5E1] text-sm mb-6">
+              <p className="text-[#CBD5E1] text-sm mb-3">
                 Website + 2–3 automations + CRM. Runs your entire follow-up pipeline.
               </p>
+              <p className="text-xs text-[#64748B] italic mb-6">Best for businesses that need a new site and a full follow-up pipeline.</p>
               <div className="text-5xl font-bold mb-1">$2,200</div>
               <p className="text-sm text-[#94A3B8] mb-8">or $1,320 as a Founding Partner</p>
               <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
@@ -138,9 +140,10 @@ export function PricingTabs() {
             {/* Full AI Buildout */}
             <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
               <h3 className="text-xl font-bold mb-2">Full AI Buildout</h3>
-              <p className="text-[#CBD5E1] text-sm mb-6">
+              <p className="text-[#CBD5E1] text-sm mb-3">
                 Custom workflows + full system integration. Everything automated.
               </p>
+              <p className="text-xs text-[#64748B] italic mb-6">Best for businesses ready to automate the entire customer journey.</p>
               <div className="text-5xl font-bold mb-1">$4,500</div>
               <p className="text-sm text-[#94A3B8] mb-8">or $2,700 as a Founding Partner</p>
               <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">

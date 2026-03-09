@@ -7,8 +7,9 @@
   --color-brand-surface: #111827;
   --color-brand-border:  #1E293B;
   --color-brand-muted:   #1E3A5F;   /* accent border / hover ring */
-  --color-brand-teal:    #0D9488;
   --color-brand-amber:   #D97706;
+  --color-brand-sky:      #0ea5e9;   /* primary accent — logo-aligned blue */
+  --color-brand-sky-dark: #0284C7;   /* accent hover state */
   --color-brand-light:   #94A3B8;
   --color-brand-text:    #F8FAFC;
 }

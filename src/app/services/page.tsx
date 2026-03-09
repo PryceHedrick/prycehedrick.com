@@ -93,6 +93,9 @@ export default function Services() {
           <p className="text-xl text-[#CBD5E1] max-w-3xl">
             Each service solves a specific problem that's costing you revenue. Start with a free audit and I'll tell you which one fits.
           </p>
+          <p className="text-sm text-[#94A3B8] mt-3 max-w-xl leading-relaxed">
+            Lead Capture and Website + AI both start at $997 — they&apos;re different entry points. Lead Capture focuses on the automation layer; Website + AI focuses on the web presence. The Business Automation System combines both at $2,200.
+          </p>
         </section>
 
         {/* ── Services ─────────────────────────────────────── */}

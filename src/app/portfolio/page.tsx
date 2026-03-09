@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/portfolio" },
 };
 
+type Stat = { value: string; label: string };
+
 const projects = [
   {
     type: "client",
@@ -32,6 +34,11 @@ const projects = [
     tech: ["Python", "Django", "PostgreSQL", "Automation"],
     screenshot: "/images/portfolio/panda-oms/screenshot.png",
     liveUrl: null as string | null,
+    stats: [
+      { value: "0", label: "Shipping errors since launch" },
+      { value: "2+", label: "Years in production" },
+      { value: "20+", label: "Hours saved weekly" },
+    ] as Stat[],
   },
   {
     type: "client",
@@ -52,6 +59,11 @@ const projects = [
     tech: ["Next.js", "React", "Stripe", "Automation"],
     screenshot: "/images/portfolio/cardguys/screenshot.png",
     liveUrl: "https://cardguys.store",
+    stats: [
+      { value: "Live", label: "Store active today" },
+      { value: "New", label: "Revenue channel opened" },
+      { value: "3+", label: "Payment options" },
+    ] as Stat[],
   },
   {
     type: "personal",
@@ -73,6 +85,7 @@ const projects = [
     tech: ["TypeScript", "Node.js", "SQLite", "Discord API", "Multiple AI APIs"],
     screenshot: "/images/portfolio/ari/screenshot.png",
     liveUrl: null as string | null,
+    stats: null as Stat[] | null,
   },
   {
     type: "personal",
@@ -93,6 +106,7 @@ const projects = [
     tech: ["Python", "Flask", "PostgreSQL", "APIs"],
     screenshot: "/images/portfolio/vault/screenshot.png",
     liveUrl: null as string | null,
+    stats: null as Stat[] | null,
   },
 ];
 
@@ -181,6 +195,18 @@ export default function Portfolio() {
                       <p className="text-sm text-[#F8FAFC] font-medium">{project.outcome}</p>
                     </div>
 
+                    {/* Stat bars */}
+                    {project.stats && (
+                      <div className="grid grid-cols-3 gap-3 mb-5">
+                        {project.stats.map((stat) => (
+                          <div key={stat.label} className="bg-[#0F172A] border border-[#1E293B] rounded-xl p-3 text-center">
+                            <div className="text-2xl font-bold text-[#F8FAFC]">{stat.value}</div>
+                            <div className="text-xs text-[#94A3B8] mt-0.5 leading-tight">{stat.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
                     {/* Award */}
                     {project.award && (
                       <div className="flex items-center gap-2 mb-5 text-sm text-[#D97706]">
@@ -223,7 +249,7 @@ export default function Portfolio() {
             <span className="flex-1 h-px bg-[#1E293B]" />
           </div>
           <p className="text-sm text-[#CBD5E1] mb-8 max-w-2xl">
-            Projects I built for myself. Not client work — but these are what prove the capability.
+            Built for myself first. These are the systems I use to run Pryceless Solutions before offering them to clients.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -290,7 +316,7 @@ export default function Portfolio() {
         {/* ── CTA ──────────────────────────────────────────── */}
         <section className="px-6 lg:px-8 py-20 border-t border-[#1E293B] bg-[#111827] text-center">
           <p className="text-[#CBD5E1] mb-6 text-lg">
-            Ready to build something real for your business?
+            Seen enough? Start with a free audit and let&apos;s scope your project.
           </p>
           <Link href="/free-audit">
             <Button className="bg-[#0ea5e9] hover:bg-[#0284C7] text-white px-8 h-12">

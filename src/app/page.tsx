@@ -5,6 +5,14 @@ import { Nav } from "@/components/nav";
 import { AnimatedSection } from "@/components/animated-section";
 import { PhoneOff, Clock, MapPin } from "lucide-react";
 
+const comparisonRows = [
+  { label: "Monthly cost",     diy: "$20–100",            agencies: "$800–2,500",  pryceless: "$0 from me" },
+  { label: "You own the code", diy: "✗",                  agencies: "✗",           pryceless: "✓" },
+  { label: "Build time",       diy: "Weeks of your time", agencies: "4–8 weeks",   pryceless: "2–4 weeks" },
+  { label: "Platform lock-in", diy: "Yes",                agencies: "Yes",         pryceless: "None" },
+  { label: "Local knowledge",  diy: "None",               agencies: "Generic",     pryceless: "Southern Indiana" },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0F172A] text-[#F8FAFC]">
@@ -24,7 +32,7 @@ export default function Home() {
           </h1>
           <p className="text-xl md:text-2xl text-[#CBD5E1] max-w-3xl mb-10 text-balance animate-fade-up animate-fade-up-delay-2">
             Custom websites and AI automation for Southern Indiana small businesses.
-            Your leads get captured, followed up with, and booked — automatically, around the clock.
+            Your leads get captured, followed up with, and booked — automatically, while you&apos;re out on a job.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-up animate-fade-up-delay-3">
             <Link href="/free-audit">
@@ -51,7 +59,7 @@ export default function Home() {
                 <div className="flex justify-center mb-4">
                   <PhoneOff className="h-7 w-7 text-[#0ea5e9]" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Calls going to voicemail?</h3>
+                <h3 className="text-lg font-semibold mb-2">Missed calls cost you jobs.</h3>
                 <p className="text-[#CBD5E1] text-sm leading-relaxed">
                   78% of customers hire the first business that responds. If you&apos;re calling back hours later, the job&apos;s already gone.
                 </p>
@@ -60,7 +68,7 @@ export default function Home() {
                 <div className="flex justify-center mb-4">
                   <Clock className="h-7 w-7 text-[#0ea5e9]" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Chasing leads manually?</h3>
+                <h3 className="text-lg font-semibold mb-2">Manual follow-up loses warm leads.</h3>
                 <p className="text-[#CBD5E1] text-sm leading-relaxed">
                   Every missed follow-up is a lost job. Automated sequences keep leads warm while you&apos;re out on a call.
                 </p>
@@ -69,7 +77,7 @@ export default function Home() {
                 <div className="flex justify-center mb-4">
                   <MapPin className="h-7 w-7 text-[#0ea5e9]" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Not showing up on Google?</h3>
+                <h3 className="text-lg font-semibold mb-2">If you can&apos;t be found, they call someone else.</h3>
                 <p className="text-[#CBD5E1] text-sm leading-relaxed">
                   A technically built site ranks locally. If you&apos;re not in the top results, your competitor is getting that call.
                 </p>
@@ -155,9 +163,104 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
+        {/* ── How It Works ──────────────────────────────────── */}
+        <AnimatedSection>
+          <section className="px-6 lg:px-8 py-24 max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How it works.</h2>
+              <p className="text-[#CBD5E1] text-lg">
+                A clear process. A fixed price. No surprises.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                {
+                  num: "01",
+                  title: "Free audit",
+                  body: "Submit the form. Within 48 hours I'll send you a Loom or PDF identifying 3–5 specific gaps costing you leads. No sales call, no obligation.",
+                },
+                {
+                  num: "02",
+                  title: "Fixed scope",
+                  body: "We agree on exactly what gets built, what it costs, and when it's done. Half upfront. Half on delivery. No surprises.",
+                },
+                {
+                  num: "03",
+                  title: "We build it",
+                  body: "You keep running your business. Design, code, automations, and setup are handled. Typical timeline: 2–4 weeks.",
+                },
+                {
+                  num: "04",
+                  title: "You own it",
+                  body: "Full source code. No monthly fees to me. Care plans are optional — only if you want ongoing support after launch.",
+                },
+              ].map((step) => (
+                <div key={step.num} className="flex flex-col">
+                  <div className="text-8xl font-bold text-[#1E293B] leading-none mb-4">{step.num}</div>
+                  <div className="text-lg font-semibold mb-2">{step.title}</div>
+                  <p className="text-sm text-[#CBD5E1] leading-relaxed">{step.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </AnimatedSection>
+
+        {/* ── Comparison Table ──────────────────────────────── */}
+        <AnimatedSection>
+          <section className="bg-[#111827] border-y border-[#1E293B]">
+            <div className="px-6 lg:px-8 py-24 max-w-7xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How we compare.</h2>
+                <p className="text-[#CBD5E1] text-lg max-w-2xl mx-auto">
+                  Neither DIY nor agencies are the right fit for most local businesses. Here&apos;s why.
+                </p>
+              </div>
+              <div className="rounded-2xl overflow-hidden border border-[#1E293B]">
+                {/* Column headers */}
+                <div className="grid grid-cols-3">
+                  <div className="bg-[#0F172A] border-r border-[#1E293B] p-8">
+                    <div className="text-lg font-semibold mb-1">DIY Tools</div>
+                    <div className="text-xs text-[#94A3B8]">Wix, Squarespace, etc.</div>
+                  </div>
+                  <div className="bg-[#0F172A] border-r border-[#1E293B] p-8">
+                    <div className="text-lg font-semibold mb-1">Agencies</div>
+                    <div className="text-xs text-[#94A3B8]">Design firms / GHL resellers</div>
+                  </div>
+                  <div className="bg-[#0ea5e9]/5 p-8 relative">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0ea5e9] text-white px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">
+                      Recommended
+                    </div>
+                    <div className="text-lg font-semibold mb-1">Pryceless Solutions</div>
+                    <div className="text-xs text-[#0ea5e9]">Southern Indiana</div>
+                  </div>
+                </div>
+                {/* Data rows */}
+                {comparisonRows.map((row) => (
+                  <div key={row.label} className="border-t border-[#1E293B]">
+                    <div className="px-8 pt-3 pb-1">
+                      <div className="text-xs font-semibold uppercase tracking-wider text-[#94A3B8]">{row.label}</div>
+                    </div>
+                    <div className="grid grid-cols-3">
+                      <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 pb-4 text-sm">
+                        <span className={row.diy === "✗" ? "text-[#475569]" : "text-[#CBD5E1]"}>{row.diy}</span>
+                      </div>
+                      <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 pb-4 text-sm">
+                        <span className={row.agencies === "✗" ? "text-[#475569]" : "text-[#CBD5E1]"}>{row.agencies}</span>
+                      </div>
+                      <div className="bg-[#0ea5e9]/5 px-8 pb-4 text-sm">
+                        <span className={row.pryceless === "✓" ? "text-[#0ea5e9] font-bold" : "text-[#CBD5E1]"}>{row.pryceless}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
         {/* ── Packages Preview ──────────────────────────────── */}
         <AnimatedSection>
-          <section className="px-6 lg:px-8 py-24 bg-[#111827] border-y border-[#1E293B]">
+          <section className="px-6 lg:px-8 py-24 bg-[#111827] border-b border-[#1E293B]">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
@@ -174,7 +277,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-2">Lead Capture Starter</h3>
                   <p className="text-[#94A3B8] text-sm mb-6">Website + lead capture + automated notification.</p>
                   <div className="text-4xl font-bold mb-8">$997</div>
-                  <ul className="flex-grow space-y-3 mb-8 text-sm text-[#94A3B8]">
+                  <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
                     <li className="flex items-center gap-2.5">
                       <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                       Website or chatbot + lead form
@@ -203,7 +306,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-2">Business Automation System</h3>
                   <p className="text-[#94A3B8] text-sm mb-6">Website + automations + CRM. Runs your follow-up pipeline.</p>
                   <div className="text-4xl font-bold mb-8">$2,200</div>
-                  <ul className="flex-grow space-y-3 mb-8 text-sm text-[#94A3B8]">
+                  <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
                     <li className="flex items-center gap-2.5">
                       <svg className="h-4 w-4 text-[#D97706] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                       Website + appointment booking
@@ -229,7 +332,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-2">Full AI Buildout</h3>
                   <p className="text-[#94A3B8] text-sm mb-6">Custom workflows + full system integration.</p>
                   <div className="text-4xl font-bold mb-8">$4,500</div>
-                  <ul className="flex-grow space-y-3 mb-8 text-sm text-[#94A3B8]">
+                  <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
                     <li className="flex items-center gap-2.5">
                       <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                       Custom automation workflows
@@ -285,7 +388,7 @@ export default function Home() {
                   Hi. I&apos;m Pryce.
                 </h2>
                 <p className="text-lg text-[#CBD5E1] mb-4">
-                  CS degree from USI. By day, I manage the IT network for a school district — 500+ devices, multiple buildings, no tolerance for downtime. By night, I build automation systems for Southern Indiana businesses losing revenue because their tech isn&apos;t keeping up.
+                  CS degree from USI. I run the IT infrastructure for a school district — 500+ devices, multiple buildings, zero tolerance for downtime. That discipline is what I bring to every client project.
                 </p>
                 <p className="text-lg text-[#CBD5E1] mb-8">
                   I built ARI — an AI operating system I use to run my own business — before I sold the concept to anyone. I&apos;m taking on a small number of founding clients right now.

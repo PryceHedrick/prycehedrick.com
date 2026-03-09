@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Nav } from "@/components/nav";
 import { AnimatedSection } from "@/components/animated-section";
+import { ProofAnchor } from "@/components/proof-anchor";
 import { PhoneOff, Clock, MapPin } from "lucide-react";
 
 const comparisonRows = [
@@ -20,42 +21,76 @@ export default function Home() {
 
       <main className="flex-grow">
 
-        {/* ── Hero ─────────────────────────────────────────── */}
-        <section className="relative px-6 lg:px-8 py-24 md:py-32 lg:py-40 flex flex-col items-center text-center max-w-5xl mx-auto overflow-hidden">
+        {/* ── Hero ─────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden bg-[#080e1a]">
+          {/* Layer 1: CSS dot grid — zero JS, preserves LCP */}
           <div
-            className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(14,165,233,0.12),transparent)] pointer-events-none"
+            className="absolute inset-0 pointer-events-none"
+            aria-hidden="true"
+            style={{
+              backgroundImage: "radial-gradient(circle, rgba(56,189,248,0.12) 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          {/* Layer 2: Center atmospheric glow */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(30,64,175,0.35),transparent)]"
             aria-hidden="true"
           />
-          {/* CSS animation — no JS, no opacity:0 flash */}
-          <div className="inline-flex items-center rounded-full border border-[#1E293B] px-3 py-1 text-sm font-medium text-[#94A3B8] mb-8 animate-fade-up">
-            <span className="flex h-2 w-2 rounded-full bg-[#0ea5e9] mr-2 flex-shrink-0" aria-hidden="true" />
-            Now accepting new clients in Southern Indiana
+          {/* Layer 3: Bottom fade to next section */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none bg-gradient-to-b from-transparent to-[#111827]"
+            aria-hidden="true"
+          />
+
+          <div className="relative z-10 px-6 lg:px-8 py-24 md:py-32 lg:py-40 flex flex-col items-center text-center max-w-5xl mx-auto">
+            {/* Badge */}
+            <div className="inline-flex items-center rounded-full border border-[#1E293B] px-3 py-1 text-sm font-medium text-[#94A3B8] mb-8 animate-fade-up">
+              <span className="flex h-2 w-2 rounded-full bg-[#0ea5e9] mr-2 flex-shrink-0 animate-pulse" aria-hidden="true" />
+              Taking new clients · Audits delivered in 48 hrs
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-balance animate-fade-up animate-fade-up-delay-1">
+              Missed calls are costing you jobs.
+            </h1>
+            <p className="text-xl md:text-2xl text-[#CBD5E1] max-w-3xl mb-10 text-balance animate-fade-up animate-fade-up-delay-2">
+              Custom websites and AI automation for Southern Indiana small businesses.
+              Your leads get captured, followed up with, and booked — automatically, while you&apos;re out on a job.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-up animate-fade-up-delay-3">
+              <Link href="/free-audit">
+                <Button size="lg" className="text-base h-14 px-8 bg-[#0ea5e9] hover:bg-[#0284C7] text-white w-full sm:w-auto">
+                  Get Your Free Business Audit →
+                </Button>
+              </Link>
+              <a href="tel:+18126109805">
+                <Button size="lg" variant="outline" className="text-base h-14 px-8 border-[#1E293B] w-full sm:w-auto">
+                  Call (812) 610-9805
+                </Button>
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-[#94A3B8] animate-fade-up animate-fade-up-delay-3">
+              Free, no-obligation audit delivered within 48 hours.
+            </p>
+
+            {/* Trust badge row */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-2 mt-8 pt-8 border-t border-white/10 animate-fade-up animate-fade-up-delay-3">
+              {[
+                "2+ years, 0 errors — Panda OMS in production",
+                "USI 2024 Outstanding Senior Project Award",
+                "Southern Indiana — call me directly",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm text-[#94A3B8]">
+                  <span className="text-[#0ea5e9]">✓</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-balance animate-fade-up animate-fade-up-delay-1">
-            Missed calls are costing you jobs.
-          </h1>
-          <p className="text-xl md:text-2xl text-[#CBD5E1] max-w-3xl mb-10 text-balance animate-fade-up animate-fade-up-delay-2">
-            Custom websites and AI automation for Southern Indiana small businesses.
-            Your leads get captured, followed up with, and booked — automatically, while you&apos;re out on a job.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-up animate-fade-up-delay-3">
-            <Link href="/free-audit">
-              <Button size="lg" className="text-base h-14 px-8 bg-[#0ea5e9] hover:bg-[#0284C7] text-white w-full sm:w-auto">
-                Get Your Free Business Audit →
-              </Button>
-            </Link>
-            <a href="tel:+18126109805">
-              <Button size="lg" variant="outline" className="text-base h-14 px-8 border-[#1E293B] w-full sm:w-auto">
-                Call (812) 610-9805
-              </Button>
-            </a>
-          </div>
-          <p className="mt-4 text-sm text-[#94A3B8] animate-fade-up animate-fade-up-delay-3">
-            Free, no-obligation audit delivered within 48 hours.
-          </p>
         </section>
 
-        {/* ── Pain Points ───────────────────────────────────── */}
+        {/* ── Pain Points ──────────────────────────────────────── */}
         <section className="border-y border-[#1E293B] bg-[#111827]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-[#1E293B]">
@@ -90,131 +125,33 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── ROI Proof ─────────────────────────────────────── */}
+        {/* ── ROI Proof ────────────────────────────────────────── */}
         <AnimatedSection>
           <section className="px-6 lg:px-8 py-16 bg-[#0ea5e9]/5 border-b border-[#0ea5e9]/20">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-2xl md:text-3xl font-medium text-[#F8FAFC] text-balance">
                 A typical HVAC shop loses{" "}
                 <span className="text-[#0ea5e9] font-bold">$25,000 a year</span>{" "}
-                to missed calls. The Lead Capture Starter pays for itself in the first month.
+                to missed calls. The Starter pays for itself in the first month.
               </p>
             </div>
           </section>
         </AnimatedSection>
 
-        {/* ── Why Pryceless ─────────────────────────────────── */}
+        {/* ── Proof Anchor ─────────────────────────────────────── */}
         <AnimatedSection>
-          <section className="px-6 lg:px-8 py-24 md:py-32 max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Why Pryceless Solutions?</h2>
-              <p className="text-[#CBD5E1] text-lg max-w-2xl mx-auto">
-                Built locally. Priced honestly. No vendor lock-in.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
-                <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Built in Southern Indiana</h3>
-                <p className="text-[#CBD5E1] text-sm leading-relaxed">
-                  Local SEO knowledge, local market context. I know Vincennes, Jasper, Bedford, and Washington — and how to rank there.
-                </p>
-              </div>
-
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
-                <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Tools You Actually Own</h3>
-                <p className="text-[#CBD5E1] text-sm leading-relaxed">
-                  Built on Make, Zapier, HubSpot — tools you control. No GoHighLevel markup, no platform subscriptions from me, no vendor lock-in.
-                </p>
-              </div>
-
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
-                <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Automated From Day One</h3>
-                <p className="text-[#CBD5E1] text-sm leading-relaxed">
-                  Every project includes automation that runs while you work: lead capture, booking, follow-up sequences, CRM routing.
-                </p>
-              </div>
-
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
-                <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">You Own the Code</h3>
-                <p className="text-[#CBD5E1] text-sm leading-relaxed">
-                  Full source code ownership. When the project is done, everything is yours — no ongoing fees to me unless you choose a care plan.
-                </p>
-              </div>
-
-              <div className="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl md:col-span-2 lg:col-span-1 transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]">
-                <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9]" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Fixed Price. No Surprises.</h3>
-                <p className="text-[#CBD5E1] text-sm leading-relaxed">
-                  No retainer lock-ins, no scope creep, no hidden invoices. Start with a free audit — then we scope your project before any money changes hands.
-                </p>
-              </div>
-            </div>
-          </section>
+          <ProofAnchor />
         </AnimatedSection>
 
-        {/* ── How It Works ──────────────────────────────────── */}
-        <AnimatedSection>
-          <section className="px-6 lg:px-8 py-24 max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How it works.</h2>
-              <p className="text-[#CBD5E1] text-lg">
-                A clear process. A fixed price. No surprises.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                {
-                  num: "01",
-                  title: "Free audit",
-                  body: "Submit the form. Within 48 hours I'll send you a Loom or PDF identifying 3–5 specific gaps costing you leads. No sales call, no obligation.",
-                },
-                {
-                  num: "02",
-                  title: "Fixed scope",
-                  body: "We agree on exactly what gets built, what it costs, and when it's done. Half upfront. Half on delivery. No surprises.",
-                },
-                {
-                  num: "03",
-                  title: "We build it",
-                  body: "You keep running your business. Design, code, automations, and setup are handled. Typical timeline: 2–4 weeks.",
-                },
-                {
-                  num: "04",
-                  title: "You own it",
-                  body: "Full source code. No monthly fees to me. Care plans are optional — only if you want ongoing support after launch.",
-                },
-              ].map((step) => (
-                <div key={step.num} className="flex flex-col">
-                  <div className="text-8xl font-bold text-[#1E293B] leading-none mb-4">{step.num}</div>
-                  <div className="text-lg font-semibold mb-2">{step.title}</div>
-                  <p className="text-sm text-[#CBD5E1] leading-relaxed">{step.body}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </AnimatedSection>
-
-        {/* ── Comparison Table ──────────────────────────────── */}
+        {/* ── Comparison Table ─────────────────────────────────── */}
         <AnimatedSection>
           <section className="bg-[#111827] border-y border-[#1E293B]">
             <div className="px-6 lg:px-8 py-24 max-w-7xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How we compare.</h2>
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#0ea5e9] mb-3">
+                  How We Compare
+                </p>
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How it compares.</h2>
                 <p className="text-[#CBD5E1] text-lg max-w-2xl mx-auto mb-4">
                   Neither DIY nor agencies are the right fit for most local businesses. Here&apos;s why.
                 </p>
@@ -235,7 +172,9 @@ export default function Home() {
                     <div className="text-lg font-semibold mb-1">Agencies</div>
                     <div className="text-xs text-[#94A3B8]">Design firms / GHL resellers</div>
                   </div>
-                  <div className="bg-[#0ea5e9]/5 p-8">
+                  {/* Pryceless column — elevated */}
+                  <div className="bg-[#0d1f35] p-8 relative">
+                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#0ea5e9] to-transparent" />
                     <div className="mb-3">
                       <span className="bg-[#0ea5e9] text-white px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">
                         Recommended
@@ -258,22 +197,147 @@ export default function Home() {
                       <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 pb-4 text-sm">
                         <span className={row.agencies === "✗" ? "text-[#475569]" : "text-[#CBD5E1]"}>{row.agencies}</span>
                       </div>
-                      <div className="bg-[#0ea5e9]/5 px-8 pb-4 text-sm">
+                      <div className="bg-[#0d1f35] px-8 pb-4 text-sm">
                         <span className={row.pryceless === "✓" ? "text-[#0ea5e9] font-bold" : "text-[#CBD5E1]"}>{row.pryceless}</span>
                       </div>
                     </div>
                   </div>
                 ))}
+                {/* Verdict row */}
+                <div className="border-t border-[#1E293B]">
+                  <div className="grid grid-cols-3">
+                    <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 py-5">
+                      <p className="text-xs text-[#475569]">Best for: complete control of your time</p>
+                    </div>
+                    <div className="bg-[#0F172A] border-r border-[#1E293B] px-8 py-5">
+                      <p className="text-xs text-[#475569]">Best for: large budgets, no time pressure</p>
+                    </div>
+                    <div className="bg-[#0d1f35] px-8 py-5">
+                      <p className="text-xs text-[#0ea5e9] font-medium mb-3">
+                        Best for: local businesses who want results without subscriptions
+                      </p>
+                      <Link href="/free-audit">
+                        <button className="text-xs text-white bg-[#0ea5e9] hover:bg-[#0284C7] transition-colors rounded-full px-4 py-1.5">
+                          Start free →
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
         </AnimatedSection>
 
-        {/* ── Packages Preview ──────────────────────────────── */}
+        {/* ── Why Pryceless ────────────────────────────────────── */}
+        <AnimatedSection>
+          <section className="px-6 lg:px-8 py-24 md:py-32 bg-[#0d1829]">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#0ea5e9] mb-3">
+                  Why Local Businesses Choose Us
+                </p>
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Why Pryceless Solutions?</h2>
+                <p className="text-[#CBD5E1] text-lg max-w-2xl mx-auto">
+                  Built locally. Priced honestly. No vendor lock-in.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Card 1 */}
+                <div className="group bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_40px_rgba(14,165,233,0.10)]">
+                  <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9] transition-colors group-hover:bg-[#0ea5e9]/20" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">Built in Southern Indiana</h3>
+                  <p className="text-[#CBD5E1] text-sm leading-relaxed">
+                    I know Vincennes, Jasper, Bedford, and Washington — not from a spreadsheet but from being here.
+                    Local SEO in Southern Indiana is different from ranking in Indianapolis. I know the difference.
+                  </p>
+                </div>
+
+                {/* Card 2 */}
+                <div className="group bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_40px_rgba(14,165,233,0.10)]">
+                  <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9] transition-colors group-hover:bg-[#0ea5e9]/20" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">Automated from day one.</h3>
+                  <p className="text-[#CBD5E1] text-sm leading-relaxed">
+                    Every project includes a system that runs after I hand it over — lead capture, follow-up,
+                    booking, CRM routing. Built on Make, Zapier, or HubSpot. Tools you control directly,
+                    no markup from me.
+                  </p>
+                </div>
+
+                {/* Card 3 */}
+                <div className="group bg-[#111827] border border-[#1E293B] p-8 rounded-2xl transition-all duration-200 hover:border-[#334155] hover:shadow-[0_0_40px_rgba(14,165,233,0.10)]">
+                  <div className="h-11 w-11 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center mb-5 text-[#0ea5e9] transition-colors group-hover:bg-[#0ea5e9]/20" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">You own it. All of it.</h3>
+                  <p className="text-[#CBD5E1] text-sm leading-relaxed">
+                    Source code, domain, automations — everything transfers to you at delivery. No monthly fees
+                    to me unless you choose a care plan. Half upfront, half on delivery. That&apos;s it.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
+        {/* ── How It Works ─────────────────────────────────────── */}
+        <AnimatedSection>
+          <section className="px-6 lg:px-8 py-24 max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#0ea5e9] mb-3">
+                The Process
+              </p>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How it works.</h2>
+              <p className="text-[#CBD5E1] text-lg">
+                A clear process. A fixed price. No surprises.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                {
+                  num: "01",
+                  title: "Free audit",
+                  body: "Submit the form. Within 48 hours I'll send you a Loom or PDF identifying 3–5 specific gaps costing you leads. No sales call, no obligation.",
+                },
+                {
+                  num: "02",
+                  title: "Fixed scope",
+                  body: "I'll agree with you on exactly what gets built, what it costs, and when it's done. Half upfront. Half on delivery. No surprises.",
+                },
+                {
+                  num: "03",
+                  title: "I build it",
+                  body: "You keep running your business. Design, code, automations, and setup are handled. Typical timeline: 2–4 weeks.",
+                },
+                {
+                  num: "04",
+                  title: "You own it",
+                  body: "Full source code. No monthly fees to me. Care plans are optional — only if you want ongoing support after launch.",
+                },
+              ].map((step) => (
+                <div key={step.num} className="flex flex-col">
+                  <div className="text-8xl font-bold text-[#1E293B] leading-none mb-4">{step.num}</div>
+                  <div className="text-lg font-semibold mb-2">{step.title}</div>
+                  <p className="text-sm text-[#CBD5E1] leading-relaxed">{step.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </AnimatedSection>
+
+        {/* ── Packages Preview ─────────────────────────────────── */}
         <AnimatedSection>
           <section className="px-6 lg:px-8 py-24 bg-[#111827] border-b border-[#1E293B]">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#0ea5e9] mb-3">
+                  Simple Pricing
+                </p>
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
                   Simple, transparent pricing.
                 </h2>
@@ -285,7 +349,8 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Starter */}
                 <div className="bg-[#0F172A] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
-                  <h3 className="text-xl font-bold mb-2">Lead Capture Starter</h3>
+                  <h3 className="text-xl font-bold mb-1">Starter</h3>
+                  <p className="text-xs text-[#94A3B8] italic mb-2">Good if: Your site isn&apos;t capturing leads — or you don&apos;t have one.</p>
                   <p className="text-[#94A3B8] text-sm mb-6">Website + lead capture + automated notification.</p>
                   <div className="text-4xl font-bold mb-8">$997</div>
                   <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
@@ -309,12 +374,13 @@ export default function Home() {
                   </Link>
                 </div>
 
-                {/* Most Popular */}
+                {/* Growth (Most Popular) */}
                 <div className="bg-[#0F172A] border-2 border-[#D97706] rounded-3xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-[#D97706]/10">
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#D97706] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                     Most Popular
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Business Automation System</h3>
+                  <h3 className="text-xl font-bold mb-1">Growth</h3>
+                  <p className="text-xs text-[#94A3B8] italic mb-2">Good if: You&apos;re getting leads but losing them in follow-up.</p>
                   <p className="text-[#94A3B8] text-sm mb-6">Website + automations + CRM. Runs your follow-up pipeline.</p>
                   <div className="text-4xl font-bold mb-8">$2,200</div>
                   <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
@@ -338,9 +404,10 @@ export default function Home() {
                   </Link>
                 </div>
 
-                {/* Full Buildout */}
+                {/* System */}
                 <div className="bg-[#0F172A] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
-                  <h3 className="text-xl font-bold mb-2">Full AI Buildout</h3>
+                  <h3 className="text-xl font-bold mb-1">System</h3>
+                  <p className="text-xs text-[#94A3B8] italic mb-2">Good if: You need custom workflows, not a packaged solution.</p>
                   <p className="text-[#94A3B8] text-sm mb-6">Custom workflows + full system integration.</p>
                   <div className="text-4xl font-bold mb-8">$4,500</div>
                   <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
@@ -377,7 +444,7 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
-        {/* ── Meet Pryce ────────────────────────────────────── */}
+        {/* ── Meet Pryce ───────────────────────────────────────── */}
         <AnimatedSection>
           <section className="py-24 px-6 lg:px-8 bg-[#0F172A]">
             <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -409,19 +476,24 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#0ea5e9] uppercase tracking-wider mb-4">
-                  Who you&apos;re working with
+                <p className="text-xs font-semibold text-[#0ea5e9] uppercase tracking-widest mb-4">
+                  Who You&apos;re Working With
                 </p>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
                   Hi. I&apos;m Pryce.
                 </h2>
                 <p className="text-lg text-[#CBD5E1] mb-4">
-                  CS degree from USI. I run the IT infrastructure for a school district — 500+ devices, multiple buildings, zero tolerance for downtime. That discipline is what I bring to every client project.
+                  CS grad from USI — 2024 Outstanding Senior Project Award. I run IT infrastructure
+                  for a school district: 500+ devices, multiple campuses, zero margin for downtime.
+                </p>
+                <p className="text-lg text-[#CBD5E1] mb-4">
+                  That same senior project — an order management system for a restaurant in Vincennes —
+                  is still running. Two-plus years. Zero data errors. No support calls. That&apos;s what I
+                  mean when I say I build things that work after I hand them over.
                 </p>
                 <p className="text-lg text-[#CBD5E1] mb-8">
-                  My senior project — a custom order system for a restaurant in Vincennes — won USI&apos;s
-                  2024 Outstanding Senior Project Award and has been running in production for two years
-                  without a single shipping error. That&apos;s the standard I hold every project to.
+                  I&apos;m not an agency. There&apos;s no account manager between us. You call me directly
+                  at (812) 610-9805.
                 </p>
                 <Link href="/free-audit">
                   <Button className="bg-[#0ea5e9] hover:bg-[#0284C7] text-white">
@@ -433,9 +505,9 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
-        {/* ── Final CTA ─────────────────────────────────────── */}
+        {/* ── Final CTA ────────────────────────────────────────── */}
         <AnimatedSection>
-          <section className="px-6 lg:px-8 py-32 text-center max-w-4xl mx-auto">
+          <section className="px-6 lg:px-8 py-32 text-center max-w-4xl mx-auto bg-[#080e1a] w-full">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
               Ready to stop losing jobs to missed calls?
             </h2>

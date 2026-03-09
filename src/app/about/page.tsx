@@ -48,7 +48,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-                Hi. I&apos;m Pryce.
+                I build systems that run after I hand them over.
               </h1>
               <p className="text-xl text-[#CBD5E1] mb-5 text-balance leading-relaxed">
                 I run the IT infrastructure for a school district — 500+ devices, multiple campuses, zero margin for downtime. That pressure teaches you to build systems that don&apos;t fail.
@@ -113,18 +113,29 @@ export default function About() {
           </div>
 
           {/* ── Story ─────────────────────────────────────── */}
-          <div className="space-y-6 text-lg text-[#CBD5E1] mb-16 max-w-3xl leading-relaxed">
-            <p>
-              Running a school district&apos;s IT infrastructure taught me something most developers never learn: real systems can&apos;t fail. When a network goes down, 500 students lose their school day. When a server breaks, teachers can&apos;t teach. That pressure forces a different kind of discipline — build it right, document it completely, and automate everything that can be automated.
+          <div className="max-w-3xl mb-16">
+            <p className="text-lg text-[#CBD5E1] mb-6 leading-relaxed">
+              I&apos;m a CS grad from USI and a full-time enterprise IT administrator. I&apos;ve spent years
+              watching how real systems break — and building ones that don&apos;t. The 2024 USI
+              Outstanding Senior Project Award wasn&apos;t for a class project. It was for production software.
             </p>
-            <p>
-              My senior capstone — an order management system for Panda International restaurant in Vincennes — won USI&apos;s 2024 Outstanding Senior Project Award. It replaced a manual, error-prone process and has been running in production for over two years without a shipping error.
+
+            <blockquote className="border-l-4 border-[#0ea5e9] pl-6 my-8">
+              <p className="text-2xl font-semibold text-[#F8FAFC] italic">
+                &ldquo;You won&apos;t pay for something you don&apos;t love.&rdquo;
+              </p>
+            </blockquote>
+
+            <p className="text-lg text-[#CBD5E1] mb-6 leading-relaxed">
+              I started Pryceless Solutions because Southern Indiana small businesses were stuck
+              between two bad options: DIY tools that eat every weekend, or agencies that charge
+              monthly for platforms you don&apos;t control.
             </p>
-            <p>
-              I built ARI — an AI operating system I use to run my own business — before I sold the concept to anyone else. It handles scheduled tasks, manages AI agents, monitors markets, sends briefings, and runs autonomously on my local machine. Same type of system I build for clients, just built for how I work.
-            </p>
-            <p className="text-white font-medium">
-              Now I build similar systems for Southern Indiana small businesses — HVAC shops, contractors, dental offices, retailers — who are losing customers because their tech is five years behind.
+
+            <p className="text-lg text-[#CBD5E1] leading-relaxed">
+              I build you a custom site and automation system, hand over the source code, and show
+              you how it runs. No monthly fees to me unless you want ongoing support. No lock-in.
+              When I&apos;m done, it&apos;s yours.
             </p>
           </div>
 

@@ -30,27 +30,27 @@ const faqs: FaqItem[] = [
   {
     category: "Automation",
     q: "What makes this different from GoHighLevel?",
-    a: "GoHighLevel resellers white-label GHL and charge $800–$2,500/month for platform access with markup. You're paying for a subscription to someone else's software, which you lose if you stop paying. With Pryceless, your automations run on tools you control (Make, N8N, HubSpot), the code is yours, and there are no platform fees from me. When we're done, you own everything outright.",
+    a: "GoHighLevel resellers white-label GHL and charge $800–$2,500/month for platform access with markup. You're paying for a subscription to someone else's software, which you lose if you stop paying. With Pryceless, your automations run on tools you control (Make, N8N, HubSpot), the code is yours, and there are no platform fees from me. When I'm done, you own everything outright.",
   },
   {
     category: "Automation",
     q: "Can my existing website be connected to automations, or do I need a new one?",
-    a: "We can connect automations to most existing websites via form embeds, Zapier webhooks, or direct API integration. If your current site is on Wix, Squarespace, or WordPress, we can usually wire in lead capture and follow-up without rebuilding. A new site is only necessary if your current one has technical problems that limit performance.",
+    a: "I can connect automations to most existing websites via form embeds, Zapier webhooks, or direct API integration. If your current site is on Wix, Squarespace, or WordPress, I can usually wire in lead capture and follow-up without rebuilding. A new site is only necessary if your current one has technical problems that limit performance.",
   },
   {
     category: "Pricing",
     q: "Can I afford AI automation as a small business?",
-    a: "The Lead Capture Starter is $997 — or $600 as a Founding Partner. If you currently lose even 2 jobs per month to slow follow-up at $500/job, that's $12,000/year. The system pays for itself in the first month. We can also do 50/50 split payments: half upfront, half on delivery.",
+    a: "The Starter is $997. If you currently lose even 2 jobs per month to slow follow-up at $500/job, that's $12,000/year. The system pays for itself in the first month. I can also do 50/50 split payments: half upfront, half on delivery.",
   },
   {
     category: "Pricing",
     q: "What's the Founding Partner program?",
-    a: "The first 3 clients get 40% off standard pricing in exchange for a detailed written case study, permission to use your results in marketing, and a short video or written testimonial. Founding pricing: $997→$600, $2,200→$1,320, $4,500→$2,700. The discount locks for 12 months.",
+    a: "Founding Partners pay full project price and get free care plan months in return — Starter gets 30 days Essential Care free, Growth gets 60 days Smart Growth free, System gets 90 days Total Partner free. No discount on the project itself. What I ask in return: one Google review, one short video testimonial, and two referrals when the time is right.",
   },
   {
     category: "Pricing",
     q: "Do you charge monthly fees?",
-    a: "Monthly care plans are optional, not required. After your project is complete, we'll talk about whether ongoing monitoring, SEO updates, or additional automations make sense for your business. Plans start at $499/month. If you don't need ongoing support, there's no obligation.",
+    a: "Monthly care plans are optional, not required. After your project is complete, I'll ask whether ongoing monitoring, updates, or additional automations make sense for your business. Plans start at $249/month. If you don't need ongoing support, there's no obligation.",
   },
   {
     category: "Pricing",
@@ -65,7 +65,7 @@ const faqs: FaqItem[] = [
   {
     category: "Process",
     q: "How long does a project take?",
-    a: "Lead Capture Starter: 1–2 weeks. Business Automation System: 2–4 weeks. Full AI Buildout: 4–6 weeks. Timeline depends on how fast you can review drafts and provide feedback. Scope is fixed at the start — no scope creep, no surprise delays.",
+    a: "Starter: 7 business days. Growth: 12 business days. System: 18 business days. Timeline depends on how fast you can review drafts and provide feedback. Scope is fixed at the start — no scope creep, no surprise delays.",
   },
   {
     category: "Process",
@@ -75,7 +75,7 @@ const faqs: FaqItem[] = [
   {
     category: "Process",
     q: "What if I'm not happy with the result?",
-    a: "We work through a revision process until you're satisfied. Every project includes a 90+ PageSpeed score guarantee on the website side. If the technical performance doesn't hit that mark, I fix it at no additional cost.",
+    a: "I work through a revision process until you're satisfied. Every project includes a 90+ PageSpeed score guarantee on the website side. If the technical performance doesn't hit that mark, I fix it at no additional cost.",
   },
   {
     category: "Technical",
@@ -84,13 +84,18 @@ const faqs: FaqItem[] = [
   },
   {
     category: "Technical",
+    q: "Do I need to know anything technical?",
+    a: "No. You tell me what your business does and what problem you want solved. I handle the rest and show you how to use whatever I build before I hand it over.",
+  },
+  {
+    category: "Technical",
     q: "Will my website rank on Google?",
-    a: "Yes — technical SEO is built into every project. 90+ PageSpeed, proper schema markup, sitemap, robots.txt, Google Business Profile setup. Local ranking also depends on review volume and citation consistency, which we'll address in the audit. Results typically show in 60–90 days for local searches.",
+    a: "Technical SEO is built into every project: 90+ PageSpeed, proper schema markup, sitemap, robots.txt, Google Business Profile setup. Local ranking also depends on review volume and citation consistency, which I'll address in the audit. Results typically show in 60–90 days for local searches.",
   },
   {
     category: "Technical",
     q: "Who do you serve? Do you work outside Southern Indiana?",
-    a: "Primary focus is Southern Indiana — Vincennes, Washington, Jasper, Bedford, Loogootee, Evansville, Bloomington. HVAC, plumbing, electrical, contractors, dental, chiro, retail, and restaurants are the best fit. Remote work is possible for the right project — reach out and we'll figure it out.",
+    a: "Primary focus is Southern Indiana — Vincennes, Washington, Jasper, Bedford, Loogootee, Evansville, Bloomington. HVAC, plumbing, electrical, contractors, dental, chiro, retail, and restaurants are the best fit. Remote work is possible for the right project — reach out and I'll figure it out.",
   },
 ];
 

@@ -63,7 +63,7 @@ export function AuditForm() {
         </div>
         <h1 className="text-4xl font-bold mb-6">You&apos;re on the list.</h1>
         <p className="text-xl text-[#CBD5E1] mb-4 max-w-2xl mx-auto">
-          Pryce will review your business and send your audit within <strong className="text-white">48 hours</strong>.
+          Pryce will review your business and send your audit within <strong className="text-white">48 hours</strong> — usually same day.
         </p>
         <p className="text-[#94A3B8] max-w-2xl mx-auto">
           You&apos;ll receive a Loom video or PDF with 3–5 specific gaps in your current setup. This is yours to keep — no obligation, and no one will call you unexpectedly.
@@ -82,10 +82,12 @@ export function AuditForm() {
       {/* Left: What you get */}
       <div>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-          Get a Free Business Automation Audit
+          Find out what&apos;s costing you leads.
         </h1>
         <p className="text-xl text-[#CBD5E1] mb-10">
-          We&apos;ll look at your current setup and identify exactly what&apos;s costing you leads — delivered as a Loom video or PDF within 48 hours.
+          I&apos;ll look at your current setup — website, follow-up process, how you handle new
+          inquiries — and send you a Loom video or PDF within 48 hours identifying the specific
+          things costing you jobs.
         </p>
 
         <div className="space-y-6 mb-10">
@@ -97,8 +99,8 @@ export function AuditForm() {
               </svg>
             </div>
             <div>
-              <h3 className="font-semibold mb-1">3–5 specific gaps identified</h3>
-              <p className="text-[#CBD5E1] text-sm">Not generic advice — actual problems costing you revenue, specific to your business.</p>
+              <h3 className="font-semibold mb-1">3–5 specific gaps, not general advice.</h3>
+              <p className="text-[#CBD5E1] text-sm">I won&apos;t send you a checklist of best practices. I&apos;ll name exactly what your business is doing — or not doing — that&apos;s losing you jobs right now.</p>
             </div>
           </div>
 
@@ -110,8 +112,8 @@ export function AuditForm() {
               </svg>
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Delivered within 48 hours</h3>
-              <p className="text-[#CBD5E1] text-sm">A Loom screen-recording walkthrough or written PDF — whichever is clearest for your situation.</p>
+              <h3 className="font-semibold mb-1">Delivered within 48 hours.</h3>
+              <p className="text-[#CBD5E1] text-sm">As a Loom screen-recording walkthrough or a written PDF — whichever is more useful to you.</p>
             </div>
           </div>
 
@@ -122,8 +124,8 @@ export function AuditForm() {
               </svg>
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Yours to keep, no obligation</h3>
-              <p className="text-[#CBD5E1] text-sm">No sales call, no follow-up pressure. If you want to work together after, great. If not, the audit is still useful.</p>
+              <h3 className="font-semibold mb-1">Yours to keep. No sales call after.</h3>
+              <p className="text-[#CBD5E1] text-sm">If you want to work together, great. If not, the audit is still yours. No follow-up pressure.</p>
             </div>
           </div>
         </div>
@@ -230,7 +232,8 @@ export function AuditForm() {
           </Button>
 
           <p className="text-xs text-center text-[#94A3B8]">
-            No spam. No sales calls. Just a clear audit of what&apos;s costing you leads — delivered in 48 hours.
+            I personally review every submission and write every audit myself.
+            Not outsourced. Not automated. About 30–45 minutes per business.
           </p>
         </form>
       </div>

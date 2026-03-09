@@ -24,11 +24,11 @@ const faqs = [
   },
   {
     q: "What if I'm not happy with the result?",
-    a: "We work through a revision process until you're satisfied. Every project includes a 90+ PageSpeed score guarantee on the website side. If it doesn't hit that mark, I fix it.",
+    a: "I work through a revision process until you're satisfied. Every project includes a 90+ PageSpeed score guarantee on the website side. If it doesn't hit that mark, I fix it.",
   },
   {
     q: "How is this different from GoHighLevel?",
-    a: "GoHighLevel resellers charge $800–$2,500/month for a platform you don't own. We build on tools you control — Make, Zapier, N8N, HubSpot — and you own the code outright. No monthly platform fees from me. No vendor lock-in.",
+    a: "GoHighLevel resellers charge $800–$2,500/month for a platform you don't own. I build on tools you control — Make, Zapier, N8N, HubSpot — and you own the code outright. No monthly platform fees from me. No vendor lock-in.",
   },
   {
     q: "How do I get started?",
@@ -37,223 +37,117 @@ const faqs = [
 ];
 
 export function PricingTabs() {
-  const [isMonthly, setIsMonthly] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   return (
     <>
-      {/* ── Toggle ──────────────────────────────────────── */}
-      <div className="flex justify-center mb-16">
-        <div className="inline-flex bg-[#111827] p-1 rounded-xl border border-[#1E293B]">
-          <button
-            onClick={() => {
-              setIsMonthly(false);
-              fireEvent("pricing_toggle", { view: "one-time" });
-            }}
-            className={`px-8 py-3 rounded-lg text-sm font-medium transition-colors ${
-              !isMonthly ? "bg-[#0ea5e9] text-white" : "text-[#94A3B8] hover:text-white"
-            }`}
-          >
-            One-Time Projects
-          </button>
-          <button
-            onClick={() => {
-              setIsMonthly(true);
-              fireEvent("pricing_toggle", { view: "monthly" });
-            }}
-            className={`px-8 py-3 rounded-lg text-sm font-medium transition-colors ${
-              isMonthly ? "bg-[#0ea5e9] text-white" : "text-[#94A3B8] hover:text-white"
-            }`}
-          >
-            Monthly Care Plans
-          </button>
-        </div>
-      </div>
-
       {/* ── Pricing Cards ───────────────────────────────── */}
       <div className="px-6 lg:px-8 pb-24 max-w-7xl mx-auto">
-        {!isMonthly ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Lead Capture Starter */}
-            <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
-              <h3 className="text-xl font-bold mb-2">Lead Capture Starter</h3>
-              <p className="text-[#CBD5E1] text-sm mb-3">
-                Website + lead capture + automated notification. Captures leads while you work.
-              </p>
-              <p className="text-xs text-[#64748B] italic mb-6">Best for businesses with an existing site that need the automation layer.</p>
-              <div className="text-5xl font-bold mb-1">$997</div>
-              <p className="text-sm text-[#94A3B8] mb-8">or $600 as a Founding Partner</p>
-              <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
-                {[
-                  "Website or chatbot + lead form",
-                  "Automated lead notification to your phone",
-                  "Google Business Profile setup",
-                  "90+ PageSpeed score guarantee",
-                  "30 days post-launch support",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/free-audit">
-                <Button variant="outline" className="w-full border-[#1E293B]">
-                  Start with a Free Audit
-                </Button>
-              </Link>
-            </div>
-
-            {/* Business Automation System */}
-            <div className="bg-[#0A0F1E] border-2 border-[#D97706] rounded-3xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-[#D97706]/10">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#D97706] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                Most Popular
-              </div>
-              <h3 className="text-xl font-bold mb-2">Business Automation System</h3>
-              <p className="text-[#CBD5E1] text-sm mb-3">
-                Website + 2–3 automations + CRM. Runs your entire follow-up pipeline.
-              </p>
-              <p className="text-xs text-[#64748B] italic mb-6">Best for businesses that need a new site and a full follow-up pipeline.</p>
-              <div className="text-5xl font-bold mb-1">$2,200</div>
-              <p className="text-sm text-[#94A3B8] mb-8">or $1,320 as a Founding Partner</p>
-              <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
-                {[
-                  "Website + appointment booking",
-                  "CRM integration (HubSpot or similar)",
-                  "3-step email/text follow-up sequence",
-                  "90+ PageSpeed score guarantee",
-                  "60 days post-launch support",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <svg className="h-4 w-4 text-[#D97706] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/free-audit">
-                <Button className="w-full bg-[#D97706] hover:bg-[#B45309] text-white">
-                  Start with a Free Audit
-                </Button>
-              </Link>
-            </div>
-
-            {/* Full AI Buildout */}
-            <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
-              <h3 className="text-xl font-bold mb-2">Full AI Buildout</h3>
-              <p className="text-[#CBD5E1] text-sm mb-3">
-                Custom workflows + full system integration. Everything automated.
-              </p>
-              <p className="text-xs text-[#64748B] italic mb-6">Best for businesses ready to automate the entire customer journey.</p>
-              <div className="text-5xl font-bold mb-1">$4,500</div>
-              <p className="text-sm text-[#94A3B8] mb-8">or $2,700 as a Founding Partner</p>
-              <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
-                {[
-                  "Custom automation workflows (Make/N8N)",
-                  "AI chatbot + full CRM pipeline",
-                  "Notion SOPs + team handoff docs",
-                  "Full source code ownership",
-                  "90 days post-launch support",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/free-audit">
-                <Button variant="outline" className="w-full border-[#1E293B]">
-                  Start with a Free Audit
-                </Button>
-              </Link>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Starter */}
+          <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
+            <h3 className="text-xl font-bold mb-1">Starter</h3>
+            <p className="text-xs text-[#94A3B8] italic mb-3">Good if: Your site isn&apos;t capturing leads — or you don&apos;t have one.</p>
+            <p className="text-[#CBD5E1] text-sm mb-6">
+              Website + lead capture + automated notification. Captures leads while you work.
+            </p>
+            <div className="text-5xl font-bold mb-8">$997</div>
+            <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
+              {[
+                "Website or chatbot + lead form",
+                "Automated lead notification to your phone",
+                "Google Business Profile setup",
+                "90+ PageSpeed score guarantee",
+                "30 days post-launch support",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link href="/free-audit">
+              <Button
+                variant="outline"
+                className="w-full border-[#1E293B]"
+                onClick={() => fireEvent("pricing_cta_click", { package: "starter" })}
+              >
+                Start with a Free Audit
+              </Button>
+            </Link>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Essential Care */}
-            <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
-              <h3 className="text-xl font-bold mb-2">Essential Care</h3>
-              <p className="text-[#CBD5E1] text-sm mb-6">Monitoring + monthly ROI report. Your system stays healthy.</p>
-              <div className="text-5xl font-bold mb-8">
-                $499<span className="text-xl text-[#94A3B8] font-normal">/mo</span>
-              </div>
-              <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
-                {[
-                  "Hosting & SSL management",
-                  "24/7 uptime monitoring",
-                  "Monthly security scans",
-                  "Monthly ROI performance report",
-                  "1 hour content updates/mo",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/free-audit">
-                <Button variant="outline" className="w-full border-[#1E293B]">Get Started</Button>
-              </Link>
-            </div>
 
-            {/* Smart Growth */}
-            <div className="bg-[#0A0F1E] border-2 border-[#0ea5e9] rounded-3xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-[#0ea5e9]/10">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#0ea5e9] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                Most Popular
-              </div>
-              <h3 className="text-xl font-bold mb-2">Smart Growth</h3>
-              <p className="text-[#CBD5E1] text-sm mb-6">Essential + 1 new automation/mo + monthly report.</p>
-              <div className="text-5xl font-bold mb-8">
-                $999<span className="text-xl text-[#94A3B8] font-normal">/mo</span>
-              </div>
-              <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
-                {[
-                  "Everything in Essential Care",
-                  "1 new automation built per month",
-                  "SEO keyword tracking + GBP updates",
-                  "Weekly security scans",
-                  "3 hours content updates/mo",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/free-audit">
-                <Button className="w-full bg-[#0ea5e9] hover:bg-[#0284C7] text-white">Get Started</Button>
-              </Link>
+          {/* Growth */}
+          <div className="bg-[#0A0F1E] border-2 border-[#D97706] rounded-3xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-[#D97706]/10">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#D97706] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              Most Popular
             </div>
-
-            {/* Total Partner */}
-            <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
-              <h3 className="text-xl font-bold mb-2">Total Partner</h3>
-              <p className="text-[#CBD5E1] text-sm mb-6">Full management + monthly strategy call + unlimited changes.</p>
-              <div className="text-5xl font-bold mb-8">
-                $1,500<span className="text-xl text-[#94A3B8] font-normal">/mo</span>
-              </div>
-              <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
-                {[
-                  "Everything in Smart Growth",
-                  "Monthly strategy + growth call",
-                  "Unlimited content changes",
-                  "Daily security scans",
-                  "Weekly GBP updates",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/free-audit">
-                <Button variant="outline" className="w-full border-[#1E293B]">Get Started</Button>
-              </Link>
-            </div>
+            <h3 className="text-xl font-bold mb-1">Growth</h3>
+            <p className="text-xs text-[#94A3B8] italic mb-3">Good if: You&apos;re getting leads but losing them in follow-up.</p>
+            <p className="text-[#CBD5E1] text-sm mb-6">
+              Website + 2–3 automations + CRM. Runs your entire follow-up pipeline.
+            </p>
+            <div className="text-5xl font-bold mb-8">$2,200</div>
+            <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
+              {[
+                "Website + appointment booking",
+                "CRM integration (HubSpot or similar)",
+                "3-step email/text follow-up sequence",
+                "90+ PageSpeed score guarantee",
+                "60 days post-launch support",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <svg className="h-4 w-4 text-[#D97706] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link href="/free-audit">
+              <Button
+                className="w-full bg-[#D97706] hover:bg-[#B45309] text-white"
+                onClick={() => fireEvent("pricing_cta_click", { package: "growth" })}
+              >
+                Start with a Free Audit
+              </Button>
+            </Link>
           </div>
-        )}
+
+          {/* System */}
+          <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 flex flex-col">
+            <h3 className="text-xl font-bold mb-1">System</h3>
+            <p className="text-xs text-[#94A3B8] italic mb-3">Good if: You need custom workflows, not a packaged solution.</p>
+            <p className="text-[#CBD5E1] text-sm mb-6">
+              Custom workflows + full system integration. Everything automated.
+            </p>
+            <div className="text-5xl font-bold mb-8">$4,500</div>
+            <ul className="flex-grow space-y-3 mb-8 text-sm text-[#CBD5E1]">
+              {[
+                "Custom automation workflows (Make/N8N)",
+                "AI chatbot + full CRM pipeline",
+                "Notion SOPs + team handoff docs",
+                "Full source code ownership",
+                "90 days post-launch support",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <svg className="h-4 w-4 text-[#0ea5e9] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link href="/free-audit">
+              <Button
+                variant="outline"
+                className="w-full border-[#1E293B]"
+                onClick={() => fireEvent("pricing_cta_click", { package: "system" })}
+              >
+                Start with a Free Audit
+              </Button>
+            </Link>
+          </div>
+        </div>
 
         <div className="mt-8 text-center text-sm text-[#CBD5E1]">
-          Care plans are discussed after your project is complete. Not sure what you need? Start with the free audit.
+          50% upfront · 50% on delivery · No hidden fees
         </div>
       </div>
 

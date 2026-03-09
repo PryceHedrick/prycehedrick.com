@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI automation services for Southern Indiana small businesses — lead capture, workflow automation, and website + AI integration. See what fits.",
+    "AI automation services for Southern Indiana small businesses — Starter, Growth, and System packages. See what fits.",
   alternates: { canonical: "/services" },
 };
 
@@ -15,15 +15,16 @@ const services = [
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     ),
-    category: "Lead Generation",
-    name: "Lead Capture & Follow-Up",
-    tagline: "Stop losing customers to voicemail and slow response.",
+    category: "Starter",
+    eyebrow: "Lead Generation",
+    name: "Your leads get captured. You stop losing the first call.",
+    goodIf: "You're losing leads because your site doesn't capture them — or you don't have a site.",
     description:
-      "78% of customers hire the first business that responds. If your competitor answers in five minutes and you call back in three hours, you lose the job — even if you do better work. Lead capture automation makes sure you always respond first.",
+      "Right now, if someone calls and you don't answer, or fills out a form at 9pm — they're gone. This builds the system that catches them: a custom site with lead capture, automated notification, and basic follow-up. Built in 7 business days.",
     whoFor:
       "HVAC, plumbing, electrical, contractors, dental, chiropractic — any business that lives on inbound calls.",
     outcomes: [
-      "Leads captured 24/7 via form, chatbot, or missed-call text-back",
+      "Your phone stops being the only way customers can reach you",
       "Automatic follow-up texts or emails sent within minutes of contact",
       "Lead routed to your phone or CRM with full context attached",
       "Appointments booked without a phone call",
@@ -37,11 +38,12 @@ const services = [
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
     ),
-    category: "Operations",
-    name: "Workflow Automation",
-    tagline: "Eliminate the manual work that eats your day.",
+    category: "Growth",
+    eyebrow: "Operations",
+    name: "For businesses that are getting leads but losing them in the follow-up gap.",
+    goodIf: "You're getting leads but losing them in follow-up.",
     description:
-      "Scheduling calls, chasing invoices, answering the same questions, updating spreadsheets — every hour spent on that is an hour you're not billing. Workflow automation handles the repetitive back-office work so you can focus on what only you can do.",
+      "You get appointment booking integrated into your site, CRM setup, and a 3-step email sequence that follows up automatically after every inquiry. No more manually chasing warm leads. Built in 12 business days.",
     whoFor:
       "Service businesses, contractors, offices, and shops spending hours a week on scheduling, invoicing, admin, or data entry.",
     outcomes: [
@@ -59,11 +61,12 @@ const services = [
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
     ),
-    category: "Digital Infrastructure",
-    name: "Website + AI Integration",
-    tagline: "A website that works — not one that just sits there.",
+    category: "System",
+    eyebrow: "Digital Infrastructure",
+    name: "Custom workflows, not a packaged solution.",
+    goodIf: "You need custom workflows, not a packaged solution.",
     description:
-      "Most small business websites are digital brochures. They look okay but don't generate anything. A properly built site with AI integration captures leads, answers questions, books appointments, and routes inquiries — automatically. It's not just a page, it's a system.",
+      "If your operation is more complex — multiple services, custom intake, a CRM that needs to talk to your scheduling tool — this is the custom build. Scope is defined during the free audit. I handle design, code, automations, and setup. Built in 18 business days.",
     whoFor:
       "Any Southern Indiana business without a website, with an outdated one, or with one that isn't generating calls.",
     outcomes: [
@@ -72,7 +75,7 @@ const services = [
       "Lead forms connected to your CRM and follow-up automation",
       "Google Business Profile setup and optimization",
     ],
-    startingAt: "Starts at $997",
+    startingAt: "Starts at $4,500",
     roiExample:
       "Ranking in the top three local results for your main service keyword typically generates 5–10 new inbound calls per month that weren't happening before.",
     accent: "#0ea5e9",
@@ -91,10 +94,10 @@ export default function Services() {
             Three ways I can help.
           </h1>
           <p className="text-xl text-[#CBD5E1] max-w-3xl">
-            Each service solves a specific problem that's costing you revenue. Start with a free audit and I'll tell you which one fits.
+            Each service solves a specific problem that&apos;s costing you revenue. Start with a free audit and I&apos;ll tell you which one fits.
           </p>
           <p className="text-sm text-[#94A3B8] mt-3 max-w-xl leading-relaxed">
-            Lead Capture and Website + AI both start at $997 — they&apos;re different entry points. Lead Capture focuses on the automation layer; Website + AI focuses on the web presence. The Business Automation System combines both at $2,200.
+            Starter: website + lead capture, $997. Growth: website + automations + CRM, $2,200. System: custom build, scope defined in your free audit, $4,500.
           </p>
         </section>
 
@@ -102,21 +105,27 @@ export default function Services() {
         <section className="px-6 lg:px-8 pb-24 max-w-6xl mx-auto space-y-10">
           {services.map((service) => (
             <div
-              key={service.name}
+              key={service.category}
               className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 md:p-12"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div>
                   {/* Category label */}
                   <div
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider mb-4 px-2.5 py-1 rounded-md"
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider mb-2 px-2.5 py-1 rounded-md"
                     style={{ backgroundColor: `${service.accent}15`, color: service.accent }}
                   >
                     {service.icon}
-                    {service.category}
+                    {service.eyebrow}
                   </div>
-                  <h2 className="text-3xl font-bold mb-3">{service.name}</h2>
-                  <p className="text-lg font-medium text-[#F8FAFC] mb-4">{service.tagline}</p>
+                  {/* Package name eyebrow */}
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: service.accent }}>
+                    {service.category}
+                  </p>
+                  <h2 className="text-2xl font-bold mb-2">{service.name}</h2>
+                  {/* Good if */}
+                  <p className="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider mb-1">Good if:</p>
+                  <p className="text-sm text-[#CBD5E1] mb-4">{service.goodIf}</p>
                   <p className="text-[#CBD5E1] mb-6 leading-relaxed">{service.description}</p>
                   <p className="text-sm text-[#CBD5E1]">
                     <span className="text-white font-medium">Who this fits:</span>{" "}

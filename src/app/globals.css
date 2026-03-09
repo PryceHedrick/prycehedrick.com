@@ -12,6 +12,12 @@
   --color-brand-sky-dark: #0284C7;   /* accent hover state */
   --color-brand-light:   #94A3B8;
   --color-brand-text:    #F8FAFC;
+
+  /* Background tier system — creates visual section rhythm */
+  --color-tier-0: #080e1a;  /* Hero, Final CTA */
+  --color-tier-1: #0b1220;  /* Pain Points, Comparison, How It Works */
+  --color-tier-2: #0d1829;  /* Proof Anchor, Why Pryceless, Meet Pryce */
+  --color-tier-3: #0d1f35;  /* Pryceless column, featured pricing card */
 }
 
 @layer base {

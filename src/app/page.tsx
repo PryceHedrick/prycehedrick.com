@@ -77,8 +77,8 @@ export default function Home() {
             {/* Trust badge row */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-2 mt-8 pt-8 border-t border-white/10 animate-fade-up animate-fade-up-delay-3">
               {[
-                "2+ years, 0 errors — Panda OMS in production",
-                "USI 2024 Outstanding Senior Project Award",
+                "800-student K-12 IT fleet managed",
+                "CS degree, USI 2024 — Dean’s List",
                 "Southern Indiana — call me directly",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm text-[#94A3B8]">
@@ -461,18 +461,19 @@ export default function Home() {
                     sizes="(max-width: 1024px) 280px, 420px"
                     className="rounded-2xl shadow-2xl"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 bg-[#0A0F1E]/85 backdrop-blur-sm border border-[#D97706]/40 rounded-xl p-3">
+                  <div className="absolute bottom-4 left-4 right-4 bg-[#0A0F1E]/85 backdrop-blur-sm border border-[#0ea5e9]/40 rounded-xl p-3">
                     <div className="flex items-center gap-2">
                       <svg
-                        className="h-4 w-4 text-[#D97706] flex-shrink-0"
+                        className="h-4 w-4 text-[#0ea5e9] flex-shrink-0"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"
                         aria-hidden="true"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                       </svg>
                       <div>
-                        <div className="text-xs font-bold text-[#D97706]">USI 2024 Outstanding Senior Project</div>
-                        <div className="text-xs text-[#94A3B8]">Computer Science Department</div>
+                        <div className="text-xs font-bold text-[#0ea5e9]">BS Computer Science, USI 2024</div>
+                        <div className="text-xs text-[#94A3B8]">Dean’s List — Fall 2022 &amp; Spring 2024</div>
                       </div>
                     </div>
                   </div>
@@ -486,13 +487,14 @@ export default function Home() {
                   Hi. I&apos;m Pryce.
                 </h2>
                 <p className="text-lg text-[#CBD5E1] mb-4">
-                  CS grad from USI — 2024 Outstanding Senior Project Award. I run IT infrastructure
-                  for a school district: 500+ devices, multiple campuses, zero margin for downtime.
+                  CS grad from USI, 2024. I run IT infrastructure for a K-12 school district —
+                  800-student 1:1 Chromebook program, Active Directory, Skyward SIS, network
+                  infrastructure. Zero margin for downtime.
                 </p>
                 <p className="text-lg text-[#CBD5E1] mb-4">
-                  That same senior project — an order management system for a restaurant in Vincennes —
-                  is still running. Two-plus years. Zero data errors. No support calls. That&apos;s what I
-                  mean when I say I build things that work after I hand them over.
+                  My senior capstone was an order management system for a real client — Panda
+                  International in Vincennes, IN. C#, ASP.NET Core, SQL Server, multi-carrier
+                  shipping API. That&apos;s the standard I bring to every engagement.
                 </p>
                 <p className="text-lg text-[#CBD5E1] mb-8">
                   I&apos;m not an agency. There&apos;s no account manager between us. You call me directly

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const stats = [
-  { value: "2+", label: "Years in production", sub: "Panda OMS — order management, Vincennes IN" },
-  { value: "0", label: "Shipping errors", sub: "Since launch, across thousands of orders" },
+  { value: "800+", label: "Students served", sub: "K-12 IT fleet — Loogootee, IN" },
+  { value: "3", label: "Projects shipped", sub: "Panda OMS · Vault · Pryceless Sites" },
   { value: "48h", label: "Audit turnaround", sub: "Free, no sales call, delivered as a document" },
 ];
 
@@ -50,12 +50,11 @@ export function ProofAnchor() {
             </svg>
             <div>
               <p className="text-sm font-medium text-[#F8FAFC] mb-1">
-                USI 2024 Outstanding Senior Project Award
+                Panda International OMS — USI Senior Capstone
               </p>
               <p className="text-sm text-[#CBD5E1]">
-                Panda International OMS — a full order management and fulfillment system built for a
-                restaurant in Vincennes, IN. Running continuously since 2023 without a single data
-                error.
+                Built for a real client as a USI CS483 senior capstone. C#, ASP.NET Core, SQL Server,
+                multi-carrier shipping API integration. Real stakeholder, real requirements.
               </p>
             </div>
           </div>

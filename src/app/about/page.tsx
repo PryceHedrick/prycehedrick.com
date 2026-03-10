@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Pryce Hedrick builds AI automation systems for Southern Indiana small businesses. CS grad, USI 2024 Outstanding Senior Project Award, enterprise IT administrator.",
+    "Pryce Hedrick builds AI automation for Southern Indiana small businesses. CS grad, USI 2024. K-12 IT administrator. Backend engineer.",
   alternates: { canonical: "/about" },
 };
 
@@ -23,7 +23,6 @@ export default function About() {
       "@type": "CollegeOrUniversity",
       name: "University of Southern Indiana",
     },
-    award: "USI 2024 Outstanding Senior Project Award",
     description:
       "CS degree from USI. Enterprise IT administrator. AI automation builder for Southern Indiana small businesses.",
     worksFor: {
@@ -51,7 +50,7 @@ export default function About() {
                 I build systems that run after I hand them over.
               </h1>
               <p className="text-xl text-[#CBD5E1] mb-5 text-balance leading-relaxed">
-                I run the IT infrastructure for a school district — 500+ devices, multiple campuses, zero margin for downtime. That pressure teaches you to build systems that don&apos;t fail.
+                I run IT for a K-12 district — 800-student 1:1 Chromebook program, Active Directory, Skyward SIS, network infrastructure. Zero margin for downtime. That pressure teaches you to build systems that don&apos;t fail.
               </p>
               <p className="text-xl text-[#CBD5E1] text-balance leading-relaxed">
                 Pryceless Solutions is where I apply that discipline to Southern Indiana businesses — HVAC shops, contractors, dental offices — who are losing customers because their tech is five years behind.
@@ -81,28 +80,28 @@ export default function About() {
               <div className="font-bold text-lg mb-1">CS Degree</div>
               <div className="text-[#94A3B8] text-sm">University of Southern Indiana, 2024</div>
             </div>
-            <div className="bg-[#111827] border border-[#D97706]/40 rounded-2xl p-6">
-              <div className="text-[#D97706] text-xs font-semibold uppercase tracking-wider mb-2">
-                Award
+            <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
+              <div className="text-[#0ea5e9] text-xs font-semibold uppercase tracking-wider mb-2">
+                Achievement
               </div>
-              <div className="font-bold text-lg mb-1">Outstanding Senior Project</div>
-              <div className="text-[#94A3B8] text-sm">USI Computer Science, 2024</div>
+              <div className="font-bold text-lg mb-1">Dean’s List</div>
+              <div className="text-[#94A3B8] text-sm">Fall 2022 &amp; Spring 2024, USI</div>
             </div>
             <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
               <div className="text-[#0ea5e9] text-xs font-semibold uppercase tracking-wider mb-2">
                 Day Job
               </div>
               <div className="font-bold text-lg mb-1">Enterprise IT Administrator</div>
-              <div className="text-[#94A3B8] text-sm">500+ devices, multi-campus network</div>
+              <div className="text-[#94A3B8] text-sm">800-student 1:1 Chromebook fleet, K-12</div>
             </div>
           </div>
 
           {/* ── Story ─────────────────────────────────────── */}
           <div className="max-w-3xl mb-16">
             <p className="text-lg text-[#CBD5E1] mb-6 leading-relaxed">
-              I&apos;m a CS grad from USI and a full-time enterprise IT administrator. I&apos;ve spent years
-              watching how real systems break — and building ones that don&apos;t. The 2024 USI
-              Outstanding Senior Project Award wasn&apos;t for a class project. It was for production software.
+              I&apos;m a CS grad from USI and a full-time IT administrator. My senior capstone was a
+              real-client project: an OMS for Panda International, built with C#, ASP.NET Core,
+              SQL Server, and REST APIs. That&apos;s the standard I bring to every engagement.
             </p>
 
             <blockquote className="border-l-4 border-[#0ea5e9] pl-6 my-8">

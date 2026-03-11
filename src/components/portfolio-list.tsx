@@ -12,7 +12,7 @@ type Stat = { value: string; label: string };
 const projects = [
   {
     type: "client" as const,
-    badge: "Client · Award-Winning",
+    badge: "Client · Capstone Project",
     badgeColor: "text-[#D97706]",
     ringColor: "ring-[#D97706]/30",
     screenshotFit: "object-cover object-center",
@@ -21,21 +21,17 @@ const projects = [
     summary:
       "The restaurant was running orders through sticky notes and verbal handoffs. I built a custom order management and fulfillment system to replace the entire process.",
     outcome:
-      "Zero shipping errors across 2+ years of continuous production use.",
-    award: "USI 2024 Outstanding Senior Project Award",
+      "Built as USI senior capstone (CS483) for a real client. Delivered working order management software on academic and client timeline.",
+    award: null as string | null,
     highlights: [
       "Replaced a manual, error-prone fulfillment workflow",
-      "Live and running in production for over two years",
-      "Won USI Computer Science department's top project award",
+      "Built RESTful API endpoints in C#, ASP.NET Core, and SQL Server",
+      "Coordinated requirements directly with client stakeholders",
     ],
-    tech: ["Python", "Django", "PostgreSQL", "Automation"],
+    tech: ["C#", "ASP.NET Core", "SQL Server", "REST APIs"],
     screenshot: "/images/portfolio/panda-oms/screenshot.png",
     liveUrl: null as string | null,
-    stats: [
-      { value: "0", label: "Shipping errors since launch" },
-      { value: "2+", label: "Years in production" },
-      { value: "20+", label: "Hours saved weekly" },
-    ] as Stat[],
+    stats: null as Stat[] | null,
   },
   {
     type: "client" as const,
@@ -46,15 +42,15 @@ const projects = [
     name: "CardGuys.store",
     location: "Evansville, IN",
     summary:
-      "A local sports card business was selling exclusively through eBay. I built a custom e-commerce storefront to expand their sales channel and automate order management.",
+      "A local sports card business was selling exclusively through eBay. I launched a Shopify-based storefront with custom automation workflows and order management integrations to expand their sales channel.",
     outcome: "Live store serving real customers, expanded beyond eBay.",
     award: null as string | null,
     highlights: [
-      "Custom storefront with inventory management",
+      "Shopify storefront extending reach beyond eBay",
       "Automated order notifications and fulfillment tracking",
       "Live and serving customers today",
     ],
-    tech: ["Next.js", "React", "Stripe", "Automation"],
+    tech: ["Shopify", "Automation", "Integrations"],
     screenshot: "/images/portfolio/cardguys/screenshot.png",
     liveUrl: "https://cardguys.store",
     stats: [
